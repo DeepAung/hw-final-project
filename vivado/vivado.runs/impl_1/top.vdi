@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Apr 21 15:28:31 2026
-# Process ID         : 45678
+# Start of session at: Tue Apr 21 15:52:44 2026
+# Process ID         : 51668
 # Current directory  : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1
 # Command line       : vivado -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
 # Log file           : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.vdi
@@ -13,51 +13,51 @@
 # Platform           : Arch
 # Operating System   : Arch Linux
 # Processor Detail   : 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
-# CPU Frequency      : 4000.136 MHz
+# CPU Frequency      : 2530.578 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16440 MB
 # Swap memory        : 16775 MB
 # Total Virtual      : 33216 MB
-# Available Virtual  : 22951 MB
+# Available Virtual  : 23068 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: open_checkpoint top_routed.dcp
 
 Starting open_checkpoint Task
 
-Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1571.934 ; gain = 0.000 ; free physical = 1743 ; free virtual = 21545
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1561.027 ; gain = 0.000 ; free physical = 2120 ; free virtual = 21563
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1770.105 ; gain = 0.000 ; free physical = 1827 ; free virtual = 21569
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1768.223 ; gain = 0.000 ; free physical = 1954 ; free virtual = 21351
 INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2025.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1838.918 ; gain = 0.000 ; free physical = 1582 ; free virtual = 21460
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1838.035 ; gain = 0.000 ; free physical = 1850 ; free virtual = 21247
 INFO: [Timing 38-478] Restoring timing data from binary archive.
 INFO: [Timing 38-479] Binary timing data restore complete.
 INFO: [Project 1-856] Restoring constraints from binary archive.
 INFO: [Project 1-853] Binary constraint restore complete.
 INFO: [Designutils 20-5722] Start Reading Physical Databases.
 Reading placement.
-Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20730
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
 Reading placer database...
-Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20726
-Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20726
-Read placeStorage: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20726
-Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20725
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
+Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
 Reading routing.
-Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20726
-Read Physdb Files: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1073 ; free virtual = 20726
-Restored from archive | CPU: 0.040000 secs | Memory: 1.292824 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2482.129 ; gain = 6.938 ; free physical = 1073 ; free virtual = 20726
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.129 ; gain = 0.000 ; free physical = 1072 ; free virtual = 20727
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
+Read Physdb Files: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
+Restored from archive | CPU: 0.070000 secs | Memory: 1.293373 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2482.184 ; gain = 5.938 ; free physical = 1431 ; free virtual = 20767
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.184 ; gain = 0.000 ; free physical = 1431 ; free virtual = 20767
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
 WARNING: [Vivado 12-23575] Critical violations of the methodology design rules detected. Critical violations may contribute to timing failures or cause functional issues in hardware. Run report_methodology for more information.
-open_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:09 . Memory (MB): peak = 2482.164 ; gain = 1042.324 ; free physical = 1071 ; free virtual = 20728
+open_checkpoint: Time (s): cpu = 00:00:23 ; elapsed = 00:00:11 . Memory (MB): peak = 2482.219 ; gain = 987.238 ; free physical = 1431 ; free virtual = 20767
 Command: write_bitstream -force top.bit
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -82,5 +82,5 @@ INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
 22 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 2902.863 ; gain = 420.699 ; free physical = 897 ; free virtual = 20552
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 21 15:29:05 2026...
+write_bitstream: Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 2902.887 ; gain = 420.668 ; free physical = 1150 ; free virtual = 20440
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 21 15:53:23 2026...
