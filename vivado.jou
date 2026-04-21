@@ -1,0 +1,105 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Apr 21 13:30:06 2026
+# Process ID         : 15244
+# Current directory  : /home/deepaung/Courses/hw-syn-lab-i/final-project
+# Command line       : vivado
+# Log file           : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado.log
+# Journal file       : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado.jou
+# Running On         : archlinux
+# Platform           : Arch
+# Operating System   : Arch Linux
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
+# CPU Frequency      : 2666.783 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16440 MB
+# Swap memory        : 16775 MB
+# Total Virtual      : 33216 MB
+# Available Virtual  : 26822 MB
+#-----------------------------------------------------------
+start_gui
+create_project vivado /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
+add_files -fileset constrs_1 -norecurse /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc
+import_files -fileset constrs_1 /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc
+remove_files  -fileset constrs_1 /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/constrs_1/imports/verilog/Basys-3-Master.xdc
+add_files -fileset constrs_1 -norecurse /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc
+add_files -norecurse {/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/vga_test.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/vga_test.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_hw_manager
+remove_files  /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v
+remove_files  {/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v}
+add_files -norecurse {/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_capture.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_config.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/debounce.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/clock_gen.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_data_out
+set_property -dict [list \
+  CONFIG.C_NUM_OF_PROBES {2} \
+  CONFIG.C_PROBE0_WIDTH {17} \
+  CONFIG.C_PROBE1_WIDTH {12} \
+] [get_ips ila_data_out]
+generate_target {instantiation_template} [get_files /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci]
+catch { config_ip_cache -export [get_ips -all ila_data_out] }
+export_ip_user_files -of_objects [get_files /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci]
+launch_runs ila_data_out_synth_1 -jobs 8
+wait_on_run ila_data_out_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.cache/compile_simlib/modelsim} {questa=/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.cache/compile_simlib/questa} {xcelium=/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.cache/compile_simlib/xcelium} {vcs=/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.cache/compile_simlib/vcs} {riviera=/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.cache/compile_simlib/riviera}] -of_objects [get_files /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci] -directory /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.ip_user_files/sim_scripts -ip_user_files_dir /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.ip_user_files -ipstatic_source_dir /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+close_hw_manager
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw_manager

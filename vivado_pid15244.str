@@ -1,0 +1,1548 @@
+/*
+
+AMD Vivado v2025.2 (64-bit) [Major: 2025, Minor: 2]
+SW Build: 6299465 on Fri Nov 14 12:34:56 MST 2025
+IP Build: 6300035 on Fri Nov 14 10:48:45 MST 2025
+IP Build: 6300035 on Fri Nov 14 10:48:45 MST 2025
+
+Process ID (PID): 15244
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Apr 21 13:30:25 ICT 2026
+Time zone: 	Indochina Time (Asia/Bangkok)
+
+OS: DISTRIB_ID="Arch"
+OS Version: 6.19.12-arch1-1
+OS Architecture: amd64
+Available processors (cores): 8
+LSB Release Description: DISTRIB_ID=Arch
+
+Display: 0
+Screen size: 1920x1080
+Local screen bounds: x = 0, y = 0, width = 1920, height = 1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.5 64-bit
+
+Java home: 	/opt/Xilinx/2025.2/tps/lnx64/jre21.0.5_11
+Java executable: 	/opt/Xilinx/2025.2/tps/lnx64/jre21.0.5_11/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms812m, -Xmx6144m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	812 MB
+Java maximum memory (-Xmx):	 6 GB
+
+User name: 	deepaung
+User home directory: /home/deepaung
+User working directory: /home/deepaung/Courses/hw-syn-lab-i/final-project
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/Xilinx/2025.2
+HDI_APPROOT: /opt/Xilinx/2025.2/Vivado
+RDI_DATADIR: /home/deepaung/Courses/hw-syn-lab-i/final-project/:/opt/Xilinx/2025.2/data
+RDI_BINDIR: /opt/Xilinx/2025.2/Vivado/bin
+
+Vivado preferences file: /home/deepaung/.Xilinx/Vivado/2025.2/vivado.xml
+Vivado preferences directory: /home/deepaung/.Xilinx/Vivado/2025.2/
+Vivado layouts directory: /home/deepaung/.Xilinx/Vivado/2025.2/data/layouts
+PlanAhead jar file: 	/opt/Xilinx/2025.2/Vivado/lib/classes/planAhead.jar
+Vivado log file: 	/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado.log
+Vivado journal file: 	/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-15244-archlinux
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GHOSTTY_SHELL_FEATURES: cursor:blink,path,title
+RDI_APPROOT: /opt/Xilinx/2025.2/Vivado
+RDI_BASEROOT: /opt/Xilinx/2025.2
+RDI_BINROOT: /opt/Xilinx/2025.2/Vivado/bin
+RDI_BUILD: yes
+RDI_DATADIR: :/opt/Xilinx/2025.2/data
+RDI_INSTALLROOT: /opt/Xilinx
+RDI_INSTALLVER: Vivado
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.5_11
+RDI_LIBDIR: /opt/Xilinx/2025.2/Vivado/lib/lnx64.o/Default:/opt/Xilinx/2025.2/Vivado/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/Xilinx/2025.2/Vitis/bin:/opt/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/deepaung/Courses/hw-syn-lab-i/final-project:archlinux_1776753003_15175
+RDI_SHARED_DATA: 
+RDI_TPS_ROOT: /opt/Xilinx/2025.2/Vivado/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /usr/bin/zsh
+XILINX: /opt/Xilinx/2025.2/Vivado/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/2025.2/Vivado/ids_lite/ISE
+XILINX_HLS: /opt/Xilinx/2025.2/Vitis
+XILINX_PLANAHEAD: /opt/Xilinx/2025.2/Vivado
+XILINX_SDK: /opt/Xilinx/2025.2/Vitis
+XILINX_VITIS: /opt/Xilinx/2025.2/Vitis
+XILINX_VIVADO: /opt/Xilinx/2025.2/Vivado
+_JAVA_AWT_WM_NONREPARENTING: 1
+
+
+GUI allocated memory:	812 MB
+GUI max memory:		6,144 MB
+Engine allocated memory: 1,929 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // t (PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,950 MB. GUI used memory: 67 MB. Current time: 4/21/26, 1:30:26 PM ICT
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "vivado"); // ad (PAResourceOtoP.ProjectNameChooser_PROJECT_NAME)
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// [GUI Memory]: 86 MB (+88006kb) [00:00:22]
+// [Engine Memory]: 1,944 MB (+1886874kb) [00:00:22]
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // g (PAResourceOtoP.PartChooser_TABBED_PANE)
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Basys3 ; Basys3 ; Basys3 ; digilentinc.com ; 1.2 ; Basys3 ; 236 ; C.0 ; 106 ; 20800 ; 41600 ; 50 ; 0 ; 90 ; 32 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0 ;  ;  ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 4, "Basys3", 0, false); // n (PAResourceAtoD.BoardChooser_BOARD_TABLE)
+expandTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Basys3 ; Basys3 ; Basys3 ; digilentinc.com ; 1.2 ; Basys3 ; 236 ; C.0 ; 106 ; 20800 ; 41600 ; 50 ; 0 ; 90 ; 32 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0 ;  ;  ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 4); // n (PAResourceAtoD.BoardChooser_BOARD_TABLE)
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Basys3 ; Basys3 ; Basys3 ; digilentinc.com ; 1.2 ; Basys3 ; 236 ; C.0 ; 106 ; 20800 ; 41600 ; 50 ; 0 ; 90 ; 32 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0 ;  ;  ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 4, "Basys3", 0, false, false, false, false, false, true); // n (PAResourceAtoD.BoardChooser_BOARD_TABLE) - Double Click
+selectButton("NEXT", "Next", "New Project"); // JButton (NEXT)
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 144 MB (+55577kb) [00:00:29]
+// [Engine Memory]: 2,043 MB (+1500kb) [00:00:30]
+// WARNING: HEventQueue.dispatchEvent() is taking  1922 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,064 MB. GUI used memory: 74 MB. Current time: 4/21/26, 1:30:43 PM ICT
+// Tcl Message: create_project vivado /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado -part xc7a35tcpg236-1 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/2025.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part digilentinc.com:basys3:part0:1.2 [current_project] 
+selectButton("FINISH", "Finish", "New Project"); // JButton (FINISH)
+// 'g' command handler elapsed time: 19 seconds
+dismissDialog("Create Project"); // bk (Create Project Progress)
+dismissDialog("New Project"); // f (dialog0)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+// [Engine Memory]: 2,927 MB (+819837kb) [00:00:33]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 2,907 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:30:54 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,079 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:31:34 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,079 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:32:14 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,079 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:32:54 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,079 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:33:34 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,079 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:34:14 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,080 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:34:54 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,080 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:35:34 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,080 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:36:14 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,080 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:36:54 PM ICT
+// Elapsed time: 367 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // C (PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a (PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES)
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files", "Add Sources"); // a (PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES)
+dismissFileChooser();
+// Elapsed time: 11 seconds
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files", "Add Sources"); // a (PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES)
+setFileChooser("/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc");
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 28 seconds
+dismissDialog("Add Sources"); // d (dialog1)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset constrs_1 -norecurse /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -fileset constrs_1 /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc 
+// [GUI Memory]: 153 MB (+2369kb) [00:07:20]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,081 MB. GUI used memory: 73 MB. Current time: 4/21/26, 1:37:34 PM ICT
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectCodeEditor("Basys-3-Master.xdc", 140, 129); // ae (Basys-3-Master.xdc)
+// TclEventType: FILE_SET_CHANGE
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // H (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // am (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete the project local file/directory from disk", false); // f (PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE): FALSE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Remove Sources"); // X (dialog4)
+// Tcl Message: remove_files  -fileset constrs_1 /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/constrs_1/imports/verilog/Basys-3-Master.xdc 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // C (PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files", "Add Sources"); // a (PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES)
+setFileChooser("/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc");
+selectCheckBox(PAResourceAtoD.ConstraintsChooserPanel_COPY_CONSTRAINTS_FILES_INTO_PROJECT, "Copy constraints files into project", false); // f (PAResourceAtoD.ConstraintsChooserPanel_COPY_CONSTRAINTS_FILES_INTO_PROJECT): FALSE
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 8 seconds
+dismissDialog("Add Sources"); // d (dialog5)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset constrs_1 -norecurse /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 3, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectCodeEditor("Basys-3-Master.xdc", 239, 121); // ae (Basys-3-Master.xdc)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,163 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:38:14 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,163 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:38:54 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,164 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:39:34 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,164 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:40:14 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,164 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:40:55 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,164 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:41:35 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,164 MB. GUI used memory: 77 MB. Current time: 4/21/26, 1:42:15 PM ICT
+// Elapsed time: 249 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // C (PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a (PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN)
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT)
+String[] filenames31467 = {"/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 10 seconds
+dismissDialog("Add Sources"); // d (dialog7)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v} 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 11m:46s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (PAResourceAtoD.AbstractFileView_RELOAD)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 11m:50s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // H (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 11m:52s
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 11m:54s
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 2,220 MB. GUI used memory: 78 MB. Current time: 4/21/26, 1:42:55 PM ICT
+// Elapsed time: 23 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes", "No Implementation Results Available"); // f (RDIResource.BaseDialog_YES)
+dismissDialog("No Implementation Results Available"); // x (dialog9)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // f (RDIResource.BaseDialog_OK)
+// 'cU' command handler elapsed time: 3 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 2,222 MB. GUI used memory: 79 MB. Current time: 4/21/26, 1:43:07 PM ICT
+dismissDialog("Launch Runs"); // cX (dialog10)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Tue Apr 21 13:43:07 2026] Launched synth_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/runme.log [Tue Apr 21 13:43:07 2026] Launched impl_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v), vga_c : vga_controller (vga_controller.v)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v), vga_c : vga_controller (vga_controller.v)]", 2, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 2,324 MB. GUI used memory: 80 MB. Current time: 4/21/26, 1:43:35 PM ICT
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vga_controller.v", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,333 MB. GUI used memory: 81 MB. Current time: 4/21/26, 1:44:15 PM ICT
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,334 MB. GUI used memory: 83 MB. Current time: 4/21/26, 1:44:55 PM ICT
+// Elapsed time: 63 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Failed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // W.a (dialog11)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 123, 52); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 123, 52, false, false, false, false, true); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor) - Double Click
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 444, 42); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,322 MB. GUI used memory: 82 MB. Current time: 4/21/26, 1:45:35 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,322 MB. GUI used memory: 82 MB. Current time: 4/21/26, 1:46:15 PM ICT
+// Elapsed time: 78 seconds
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 840, 121); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 265, 110); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 275, 94); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 114, 80); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 114, 80, false, false, false, false, true); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor) - Double Click
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 597, 80); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 997, 78); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 361, 113); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // ab
+selectTab((HResource) null, (HResource) null, "Messages", 1); // ab
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Common 17-55] 'set_property' expects at least one object. [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc:7]. ]", 5, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,323 MB. GUI used memory: 82 MB. Current time: 4/21/26, 1:46:55 PM ICT
+// Elapsed time: 15 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, Pin Planning, [DRC NSTD-1] Unspecified I/O Standard: 2 out of 28 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: clk_100MHz, and reset.. ]", 10, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,324 MB. GUI used memory: 83 MB. Current time: 4/21/26, 1:47:35 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 38 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // f (RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN): FALSE
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // f (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // x (dialog12)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1160] Copying file /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/vga_test.dcp to /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/utils_1/imports/synth_1 and adding it to utils fileset 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // f (RDIResource.BaseDialog_OK)
+// 'cU' command handler elapsed time: 3 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 2,324 MB. GUI used memory: 86 MB. Current time: 4/21/26, 1:47:46 PM ICT
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Launch Runs"); // cX (dialog13)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Tue Apr 21 13:47:46 2026] Launched synth_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/runme.log [Tue Apr 21 13:47:46 2026] Launched impl_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // ab
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // ab
+// HMemoryUtils.trashcanNow. Engine heap size: 2,337 MB. GUI used memory: 84 MB. Current time: 4/21/26, 1:48:16 PM ICT
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 37 seconds
+selectCodeEditor("vga_controller.v", 292, 404); // ae (vga_controller.v)
+selectCodeEditor("vga_controller.v", 114, 319); // ae (vga_controller.v)
+selectCodeEditor("vga_controller.v", 114, 319, false, false, false, false, true); // ae (vga_controller.v) - Double Click
+selectCodeEditor("vga_controller.v", 204, 310); // ae (vga_controller.v)
+selectCodeEditor("vga_controller.v", 346, 321); // ae (vga_controller.v)
+selectCodeEditor("vga_controller.v", 302, 316); // ae (vga_controller.v)
+selectCodeEditor("vga_controller.v", 345, 319); // ae (vga_controller.v)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,338 MB. GUI used memory: 84 MB. Current time: 4/21/26, 1:48:56 PM ICT
+// Elapsed time: 16 seconds
+selectCodeEditor("vga_controller.v", 577, 373); // ae (vga_controller.v)
+selectCodeEditor("vga_controller.v", 653, 368); // ae (vga_controller.v)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl (Dont Echo) Command: 'rdi::info_commands get_hw_probes'
+// Tcl (Dont Echo) Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: open_hw_manager 
+dismissDialog("Open Hardware Manager"); // bk (Open Hardware Manager Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,394 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:49:36 PM ICT
+// Elapsed time: 44 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (PAResourceOtoP.ProgramDebugTab_OPEN_TARGET)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ap (PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, auto_connect_target_menu)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2025.2   **** Build date : Oct 28 2025 at 16:07:00     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2025.2.0   ****** Build date   : Nov 14 2025-06:16:52     **** Build number : 2025.2.1763075812       ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.       ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/vga_test.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bk (Auto Connect Progress)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program", "Program Device"); // f (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aT (dialog15)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/vga_test.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it. 
+dismissDialog("Program Device"); // bk (Program Device Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,436 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:50:16 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,438 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:50:56 PM ICT
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:51:37 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:52:17 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:52:57 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:53:37 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:54:17 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:54:57 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:55:37 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:56:17 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:56:57 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:57:37 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:58:17 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:58:57 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 1:59:37 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 2:00:17 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 2:00:57 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 2:01:37 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 88 MB. Current time: 4/21/26, 2:02:17 PM ICT
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,452 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:02:57 PM ICT
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// [GUI Memory]: 164 MB (+2946kb) [00:33:01]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:03:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:04:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:04:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:05:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:06:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:06:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:07:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:08:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:08:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:09:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:10:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:10:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:11:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:12:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:12:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:13:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:14:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:14:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:15:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:16:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:16:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:17:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:18:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:18:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:19:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:20:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:20:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:21:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:22:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:22:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:23:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:24:18 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:24:58 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:25:38 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:26:18 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,456 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:26:58 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 56m:26s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 56m:30s
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,488 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:27:39 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:06s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:08s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,520 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:28:19 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:50s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 57m:52s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,553 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:28:59 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,553 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:29:39 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,553 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:30:19 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,553 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:30:59 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,553 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:31:39 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:01m:18s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:01m:20s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,585 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:32:19 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:00s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:04s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:06s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:10s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:14s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:16s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,748 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:32:59 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:18s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:22s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:24s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:34s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:02m:36s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,813 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:33:39 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,813 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:34:19 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,813 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:34:59 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,813 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:35:39 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,813 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:36:19 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:06m:00s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:06m:04s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,843 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:36:59 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,843 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:37:39 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,843 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:38:19 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:08m:16s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,875 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:39:00 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:08m:18s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,875 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:39:40 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:09m:24s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:09m:26s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,907 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:40:20 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:09m:50s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:09m:52s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,940 MB. GUI used memory: 89 MB. Current time: 4/21/26, 2:41:00 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:10m:56s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:41:40 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:10m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:42:20 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:43:00 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:43:40 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:44:20 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:45:00 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:45:40 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:46:20 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:47:00 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,972 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:47:40 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:17m:16s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:17m:18s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,004 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:48:02 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:17m:20s
+// [Engine Memory]: 3,562 MB (+512906kb) [01:17:51]
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:17m:22s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,565 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:48:21 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,039 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:49:01 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:18m:50s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:18m:54s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:18m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,103 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:49:41 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:02s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:04s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:14s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:16s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:20s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:22s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,232 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:50:22 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:42s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:44s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:46s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:50s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:54s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:56s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:19m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,360 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:51:03 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:20m:44s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:20m:46s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:20m:54s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:20m:56s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:20m:58s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:00s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,457 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:51:43 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:02s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:06s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:18s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:20s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:24s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:28s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,554 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:52:24 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:44s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:21m:46s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,586 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:53:04 PM ICT
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:22m:22s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:22m:24s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:22m:34s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:22m:36s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,650 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:53:22 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:22m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,682 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:53:42 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:00s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,682 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:53:45 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:06s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:08s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 3,746 MB (+5783kb) [01:23:44]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:14s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:16s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,746 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:54:02 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:32s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:23m:34s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,778 MB. GUI used memory: 90 MB. Current time: 4/21/26, 2:54:26 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:24m:22s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,810 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:55:06 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:24m:24s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:24m:44s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:24m:46s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,842 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:55:32 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:24m:52s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:24m:56s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,588 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:55:47 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:25m:26s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:25m:28s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,906 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:56:27 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,906 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:57:07 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,906 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:57:47 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,906 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:58:27 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:28m:22s
+// [Engine Memory]: 3,938 MB (+5190kb) [01:28:53]
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 92 MB. Current time: 4/21/26, 2:59:07 PM ICT
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:28m:24s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 2:59:47 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:00:27 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 92 MB. Current time: 4/21/26, 3:01:07 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:01:47 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:02:27 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:03:08 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:03:48 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,938 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:04:28 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:34m:20s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:34m:22s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:34m:24s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,002 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:05:08 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:34m:26s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:34m:28s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:34m:30s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,034 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:05:49 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:35m:28s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:35m:30s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:35m:36s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:35m:38s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:35m:40s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:35m:42s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,133 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:06:29 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,133 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:07:09 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 4,165 MB (+31175kb) [01:37:16]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:46s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:48s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:50s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:52s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:54s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:56s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:36m:58s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:37m:00s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:37m:02s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,293 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:07:50 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,293 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:08:30 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,293 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:09:10 PM ICT
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:38m:28s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:38m:32s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:39m:00s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:39m:02s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,357 MB. GUI used memory: 93 MB. Current time: 4/21/26, 3:09:51 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,357 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:10:31 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,357 MB. GUI used memory: 93 MB. Current time: 4/21/26, 3:11:11 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,357 MB. GUI used memory: 79 MB. Current time: 4/21/26, 3:11:51 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:41m:16s
+// [Engine Memory]: 4,389 MB (+16728kb) [01:41:47]
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:41m:20s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,389 MB. GUI used memory: 74 MB. Current time: 4/21/26, 3:12:31 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,399 MB. GUI used memory: 74 MB. Current time: 4/21/26, 3:13:11 PM ICT
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:42m:28s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:42m:32s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:42m:34s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:42m:36s
+// Elapsed time: 5001 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (PAResourceTtoZ.TaskBanner_CLOSE)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK", "Confirm Close"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Confirm Close"); // x (dialog16)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bk (Close Hardware Manager Progress)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v), clk_div : xil_defaultlib.clock_gen]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v), vga_c : vga_controller (vga_controller.v)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // am (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Remove Sources"); // X (dialog17)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:02s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v), vga_c : vga_controller (vga_controller.v)]", 6, false, true, false, false, false, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Shift Key
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v), vga_c : vga_controller (vga_controller.v)]", 6, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // am (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+// TclEventType: DG_GRAPH_GENERATED
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Remove Sources"); // X (dialog18)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v} 
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:06s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:08s
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,505 MB. GUI used memory: 76 MB. Current time: 4/21/26, 3:13:52 PM ICT
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // C (PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT)
+String[] filenames16706 = {"/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_capture.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_config.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/clock_gen.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/debounce.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v", "/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v"};
+setFileChooser(filenames16706);
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 9 seconds
+dismissDialog("Add Sources"); // d (dialog19)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_capture.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_config.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/debounce.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/clock_gen.v /home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_controller.v} 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:20s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:22s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:24s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:26s
+// Elapsed time: 12 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectCodeEditor("top.v", 188, 165); // ae (top.v)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // H (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:46s
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 4,596 MB. GUI used memory: 79 MB. Current time: 4/21/26, 3:14:32 PM ICT
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vga_test (top.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// [Engine Memory]: 4,616 MB (+7766kb) [01:44:20]
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:50s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:52s
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // H (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:43m:54s
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), clk_div : clock_gen (clock_gen.v)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), clk_div : clock_gen (clock_gen.v)]", 2, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.v", 1); // m (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:44m:22s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,762 MB. GUI used memory: 79 MB. Current time: 4/21/26, 3:15:07 PM ICT
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:44m:26s
+// Elapsed time: 23 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), vga_c : vga_controller (vga_controller.v)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,752 MB. GUI used memory: 79 MB. Current time: 4/21/26, 3:15:13 PM ICT
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", false); // f (RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN): FALSE
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // f (RDIResource.BaseDialog_YES)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Synthesis is Out-of-date"); // x (dialog21)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/utils_1/imports/synth_1/vga_test.dcp with file /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/vga_test.dcp 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // f (RDIResource.BaseDialog_OK)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,743 MB. GUI used memory: 81 MB. Current time: 4/21/26, 3:15:19 PM ICT
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Launch Runs"); // cX (dialog22)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Tue Apr 21 15:15:19 2026] Launched synth_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/runme.log [Tue Apr 21 15:15:19 2026] Launched impl_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,743 MB. GUI used memory: 80 MB. Current time: 4/21/26, 3:15:53 PM ICT
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 4,754 MB. GUI used memory: 81 MB. Current time: 4/21/26, 3:16:33 PM ICT
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,754 MB. GUI used memory: 82 MB. Current time: 4/21/26, 3:17:13 PM ICT
+// Elapsed time: 113 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl (Dont Echo) Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: open_hw_manager 
+dismissDialog("Open Hardware Manager"); // bk (Open Hardware Manager Progress)
+// Elapsed time: 15 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (PAResourceOtoP.ProgramDebugTab_OPEN_TARGET)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ap (PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, auto_connect_target_menu)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2025.2   **** Build date : Oct 28 2025 at 16:07:00     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2025.2.0   ****** Build date   : Nov 14 2025-06:16:52     **** Build number : 2025.2.1763075812       ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.       ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bk (Auto Connect Progress)
+// Elapsed time: 10 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+applyEnter(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, "/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit"); // ac (PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program", "Program Device"); // f (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aT (dialog24)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it. 
+dismissDialog("Program Device"); // bk (Program Device Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,787 MB. GUI used memory: 85 MB. Current time: 4/21/26, 3:17:54 PM ICT
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,787 MB. GUI used memory: 86 MB. Current time: 4/21/26, 3:18:34 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,787 MB. GUI used memory: 85 MB. Current time: 4/21/26, 3:19:14 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,787 MB. GUI used memory: 85 MB. Current time: 4/21/26, 3:19:54 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,787 MB. GUI used memory: 85 MB. Current time: 4/21/26, 3:20:34 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,787 MB. GUI used memory: 85 MB. Current time: 4/21/26, 3:21:14 PM ICT
+// Elapsed time: 233 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", (String) null); // OverlayTextField (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD)
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "ILA"); // OverlayTextField (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ILA (Integrated Logic Analyzer) ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:ila:6.2", 3, "ILA (Integrated Logic Analyzer)", 0, false); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ILA (Integrated Logic Analyzer) ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:ila:6.2", 3); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ILA (Integrated Logic Analyzer) ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:ila:6.2", 3, "ILA (Integrated Logic Analyzer)", 0, false, false, false, false, false, true); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// WARNING: HEventQueue.dispatchEvent() is taking  1008 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,879 MB. GUI used memory: 94 MB. Current time: 4/21/26, 3:21:52 PM ICT
+dismissDialog("Customize IP"); // i (Customize IP Progress)
+// [Engine Memory]: 4,879 MB (+33997kb) [01:51:40]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,879 MB. GUI used memory: 93 MB. Current time: 4/21/26, 3:21:54 PM ICT
+setText("Component Name", "ila_data_out"); // I (Component Name)
+setText("Number of Probes", "2"); // I (Number of Probes)
+// Elapsed time: 14 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Probe_Ports(0..1)", 1); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+setText(PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD, "8"); // I (PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,377 MB. GUI used memory: 94 MB. Current time: 4/21/26, 3:22:32 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 94 MB. Current time: 4/21/26, 3:22:34 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 94 MB. Current time: 4/21/26, 3:23:14 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 93 MB. Current time: 4/21/26, 3:23:54 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 95 MB. Current time: 4/21/26, 3:24:34 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 93 MB. Current time: 4/21/26, 3:25:15 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 93 MB. Current time: 4/21/26, 3:25:55 PM ICT
+// Elapsed time: 208 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "General Options", 0); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Probe_Ports(0..1)", 1); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "General Options", 0); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Probe_Ports(0..1)", 1); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+setText(PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD, "8"); // I (PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD)
+setText(PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD, "17"); // I (PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD)
+setText(PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD, "12"); // I (PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD)
+setText(PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD, "17"); // I (PAResourceEtoH.HACGCTextFieldCellEditor_TEXT_FIELD)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,880 MB. GUI used memory: 94 MB. Current time: 4/21/26, 3:26:35 PM ICT
+// Elapsed time: 21 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Customize IP"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Customize IP"); // m (dialog25)
+// TclEventType: CREATE_IP_CORE
+// Tcl Message: create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_data_out 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property -dict [list \   CONFIG.C_NUM_OF_PROBES {2} \   CONFIG.C_PROBE0_WIDTH {17} \   CONFIG.C_PROBE1_WIDTH {12} \ ] [get_ips ila_data_out] 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: generate_target {instantiation_template} [get_files /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_data_out'... 
+dismissDialog("Customize IP"); // bk (Customize IP Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:55m:56s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:55m:58s
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate", "Generate Output Products"); // f (PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: generate_target all [get_files  /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_data_out'... 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_data_out'... 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_data_out'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_data_out'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all ila_data_out] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci] -no_script -sync -force -quiet 
+// TclEventType: RUN_ADD_COLLECTION
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: RUN_ADD_COLLECTION
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/sources_1/ip/ila_data_out/ila_data_out.xci] 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,966 MB. GUI used memory: 91 MB. Current time: 4/21/26, 3:26:42 PM ICT
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs ila_data_out_synth_1 -jobs 8 
+// Tcl Message: [Tue Apr 21 15:26:42 2026] Launched ila_data_out_synth_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/ila_data_out_synth_1/runme.log 
+// TclEventType: PROJECT_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RUN_STATUS_CHANGE
+selectButton("OptionPane.button", "OK", "Generate Output Products"); // JButton (OptionPane.button)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:06s
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (PAResourceTtoZ.TaskBanner_CLOSE)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:08s
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(RDIResource.BaseDialog_OK, "OK", "Confirm Close"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Confirm Close"); // x (dialog27)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bk (Close Hardware Manager Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:10s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ila_data_out (ila_data_out.xci)]", 7, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ila_data_out (ila_data_out.xci)]", 7, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+dismissDialog("Re-customize IP"); // m (dialog28)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,964 MB. GUI used memory: 94 MB. Current time: 4/21/26, 3:27:17 PM ICT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:36s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:39s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:40s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:42s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:52s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:54s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:56m:58s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:57m:00s
+// [Engine Memory]: 5,145 MB (+23043kb) [01:57:31]
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 01h:57m:02s
+// HMemoryUtils.trashcanNow. Engine heap size: 5,135 MB. GUI used memory: 104 MB. Current time: 4/21/26, 3:27:59 PM ICT
+// Elapsed time: 88 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton("OptionPane.button", "OK", "Generate Bitstream"); // JButton (OptionPane.button)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+dismissDialog("Launch Runs"); // cX (dialog29)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 180 MB (+8296kb) [01:58:15]
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// HMemoryUtils.trashcanNow. Engine heap size: 5,136 MB. GUI used memory: 105 MB. Current time: 4/21/26, 3:28:28 PM ICT
+// Tcl Message: reset_run impl_1 -prev_step  
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: PAUSE_COMPOSITE_FILE_CHANGE_GUI
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Tue Apr 21 15:28:28 2026] Launched impl_1... Run output will be captured here: /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,136 MB. GUI used memory: 106 MB. Current time: 4/21/26, 3:28:39 PM ICT
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (PAResourceAtoD.AbstractFileView_RELOAD)
+selectCodeEditor("top.v", 209, 210); // ae (top.v)
+selectCodeEditor("top.v", 68, 429); // ae (top.v)
+selectCodeEditor("top.v", 69, 390, false, true, false, false, false); // ae (top.v) - Control Key
+selectCodeEditor("top.v", 48, 405); // ae (top.v)
+selectCodeEditor("top.v", 48, 405, false, false, false, false, true); // ae (top.v) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), ila_inst : ila_data_out (ila_data_out.xci)]", 7, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectCodeEditor("top.v", 255, 378); // ae (top.v)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+selectCodeEditor("top.v", 212, 221); // ae (top.v)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // f (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl (Dont Echo) Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: open_hw_manager 
+dismissDialog("Open Hardware Manager"); // bk (Open Hardware Manager Progress)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (PAResourceOtoP.ProgramDebugTab_OPEN_TARGET)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ap (PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, auto_connect_target_menu)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2025.2   **** Build date : Oct 28 2025 at 16:07:00     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2025.2.0   ****** Build date   : Nov 14 2025-06:16:52     **** Build number : 2025.2.1763075812       ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.       ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.    
+dismissDialog("Auto Connect"); // bk (Auto Connect Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,169 MB. GUI used memory: 109 MB. Current time: 4/21/26, 3:29:20 PM ICT
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE
+// Elapsed time: 11 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (PAResourceOtoP.ProgramDebugTab_OPEN_TARGET)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ap (PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, auto_connect_target_menu)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// Tcl Message: disconnect_hw_server localhost:3121 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2025.2.0   ****** Build date   : Nov 14 2025-06:16:52     **** Build number : 2025.2.1763075812       ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.       ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183B81EE0A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0). 
+dismissDialog("Auto Connect"); // bk (Auto Connect Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,169 MB. GUI used memory: 109 MB. Current time: 4/21/26, 3:30:01 PM ICT
+// Elapsed time: 30 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program", "Program Device"); // f (PAResourceOtoP.ProgramFpgaDialog_PROGRAM, RDIResource.BaseDialog_OK)
+dismissDialog("Program Device"); // aT (dialog31)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported soft debug core(s) in it. 
+// 'D' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // bk (Program Device Progress)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "XADC ; ", 3, "XADC", 0, false); // m (PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xilinx_tcf/Digilent/210183B81EE0A (1) ; Open", 1, "xilinx_tcf/Digilent/210183B81EE0A (1)", 0, true); // m (PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE) - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "localhost (1) ; Connected", 0, "localhost (1)", 0, true); // m (PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE) - Node
+// Elapsed time: 18 seconds
+selectCodeEditor("top.v", 137, 445); // ae (top.v)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (PAResourceTtoZ.TaskBanner_CLOSE)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK", "Confirm Close"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Confirm Close"); // x (dialog32)
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bk (Close Hardware Manager Progress)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), ila_inst : ila_data_out (ila_data_out.xci)]", 7, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), ila_inst : ila_data_out (ila_data_out.xci)]", 7, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 120 MB. Current time: 4/21/26, 3:30:41 PM ICT
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Probe_Ports(0..1)", 1); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+dismissDialog("Re-customize IP"); // m (dialog33)
+// [GUI Memory]: 189 MB (+282kb) [02:01:06]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 115 MB. Current time: 4/21/26, 3:31:21 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 115 MB. Current time: 4/21/26, 3:32:01 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 115 MB. Current time: 4/21/26, 3:32:41 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 115 MB. Current time: 4/21/26, 3:33:21 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 115 MB. Current time: 4/21/26, 3:34:01 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 5,139 MB. GUI used memory: 115 MB. Current time: 4/21/26, 3:34:41 PM ICT
+// Elapsed time: 250 seconds
+selectCodeEditor("top.v", 152, 430); // ae (top.v)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), ila_inst : ila_data_out (ila_data_out.xci)]", 7, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), ila_inst : ila_data_out (ila_data_out.xci)]", 7, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+dismissDialog("Re-customize IP"); // m (dialog34)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 02h:04m:24s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 02h:04m:26s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 02h:04m:28s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 02h:04m:30s
+// HMemoryUtils.trashcanNow. Engine heap size: 5,202 MB. GUI used memory: 117 MB. Current time: 4/21/26, 3:35:22 PM ICT
