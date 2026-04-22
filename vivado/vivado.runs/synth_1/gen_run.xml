@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1776759319" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="top_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="top.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="top_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="top_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="top.vds"/>
-  <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="top.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1776837486" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="top_test_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="top_test.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="top_test_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="top_test_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_test_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="top_test.vds"/>
+  <File Type="REPORTS-TCL" Name="top_test_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="top_test_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="top_test.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../verilog/vga_controller.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../verilog/top.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/ila_data_out_1/ila_data_out.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../verilog/camera_capture.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -46,14 +69,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../verilog/vga_controller.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../verilog/top.v">
+    <File Path="$PPRDIR/../verilog/top_test.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -62,8 +78,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="top_test"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -93,9 +108,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

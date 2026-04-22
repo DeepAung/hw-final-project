@@ -56,8 +56,6 @@ module blk_mem_gen_0_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire clka,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire ena,
-  (* X_INTERFACE_IGNORE = "true" *)
   input wire [0:0] wea,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire [16:0] addra,
@@ -66,8 +64,6 @@ module blk_mem_gen_0_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire clkb,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire enb,
-  (* X_INTERFACE_IGNORE = "true" *)
   input wire [16:0] addrb,
   (* X_INTERFACE_IGNORE = "true" *)
   output wire [11:0] doutb
@@ -75,12 +71,10 @@ module blk_mem_gen_0_sv (
 
   blk_mem_gen_0 inst (
     .clka(clka),
-    .ena(ena),
     .wea(wea),
     .addra(addra),
     .dina(dina),
     .clkb(clkb),
-    .enb(enb),
     .addrb(addrb),
     .doutb(doutb)
   );

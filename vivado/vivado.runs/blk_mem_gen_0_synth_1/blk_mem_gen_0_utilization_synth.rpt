@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Apr 21 15:48:24 2026
+| Date         : Tue Apr 21 16:14:57 2026
 | Host         : archlinux running 64-bit Arch Linux
 | Command      : report_utilization -file blk_mem_gen_0_utilization_synth.rpt -pb blk_mem_gen_0_utilization_synth.pb
 | Design       : blk_mem_gen_0
@@ -34,8 +34,8 @@ Table of Contents
 | Slice LUTs*             |   99 |     0 |          0 |     20800 |  0.48 |
 |   LUT as Logic          |   99 |     0 |          0 |     20800 |  0.48 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |   10 |     0 |          0 |     41600 |  0.02 |
-|   Register as Flip Flop |   10 |     0 |          0 |     41600 |  0.02 |
+| Slice Registers         |    5 |     0 |          0 |     41600 |  0.01 |
+|   Register as Flip Flop |    5 |     0 |          0 |     41600 |  0.01 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                |   18 |     0 |          0 |     16300 |  0.11 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
@@ -62,7 +62,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 10    |          Yes |       Reset |            - |
+| 5     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -156,14 +156,16 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |   83 |                 LUT |
+| LUT6     |   64 |                 LUT |
+| LUT5     |   31 |                 LUT |
 | RAMB36E1 |   26 |        Block Memory |
 | MUXF7    |   18 |               MuxFx |
-| LUT5     |   12 |                 LUT |
-| FDRE     |   10 |        Flop & Latch |
-| LUT4     |    2 |                 LUT |
-| LUT2     |    2 |                 LUT |
+| FDRE     |    5 |        Flop & Latch |
 | RAMB18E1 |    1 |        Block Memory |
+| LUT4     |    1 |                 LUT |
+| LUT3     |    1 |                 LUT |
+| LUT2     |    1 |                 LUT |
+| LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

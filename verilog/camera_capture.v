@@ -1,4 +1,4 @@
-module ov7670_capture (
+module camera_capture (
     input             pclk,
     input             vsync,
     input             href,
@@ -29,13 +29,11 @@ module ov7670_capture (
         end else begin
             if (address < 76800) address <= address_next;
             else address <= 76800;
-            we <= wr_hold[1];
-            wr_hold <= {
-                wr_hold[0], (href && (!wr_hold[0]))
-            };  //���ñ���д�������
+            we      <= wr_hold[1];
+            wr_hold <= {wr_hold[0], (href && (!wr_hold[0]))};
             d_latch <= {d_latch[7:0], d};
 
-            if (wr_hold[1] ==1 )begin  //���õ�һ��������������Ϣ�󣬽���16-12λ��ת��
+            if (wr_hold[1] == 1) begin
 
                 address_next <= address_next + 1;
 

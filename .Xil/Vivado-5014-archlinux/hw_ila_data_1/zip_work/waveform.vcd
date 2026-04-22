@@ -1,0 +1,27 @@
+$date
+        2026-Apr-22 14:18:23
+$end
+$version
+        Vivado v2025.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 17 " capture_addr [16:0] $end
+$var reg 12 3 capture_data [11:0] $end
+$var reg 1 ? _TRIGGER $end
+$var reg 1 @ _WINDOW $end
+$var reg 1 A _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1010101000000000 "
+b100100010 3
+0?
+1@
+0A
+$end
+#512
+1?
