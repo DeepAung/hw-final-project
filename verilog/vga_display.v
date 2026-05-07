@@ -1,111 +1,106 @@
 `timescale 1ns / 1ps
 
-// 640 X 480 @ 60Hz with a 25.000MHz pixel clock
-
 module vga_display (
     input            clk25,
+    input      [1:0] filter_sw,
     output reg [3:0] vga_red,
     output reg [3:0] vga_green,
     output reg [3:0] vga_blue,
     output reg       vga_hsync,
     output reg       vga_vsync,
-    output     [9:0] HCnt,
-    output     [9:0] VCnt,
-
-    output [16:0] frame_addr,
-    input  [11:0] frame_pixel
+    output reg [16:0] frame_addr,
+    input      [11:0] frame_pixel
 );
-    //Timing constants
-    parameter hRez = 640;
-    parameter hStartSync = 640 + 16;
-    parameter hEndSync = 640 + 16 + 96;
-    parameter hMaxCount = 800;
 
-    parameter vRez = 480;
-    parameter vStartSync = 480 + 10;
-    parameter vEndSync = 480 + 10 + 2;
-    parameter vMaxCount = 480 + 10 + 2 + 33;
+    // VGA 640x480 @ 60Hz Timing Constants
+    localparam H_ACTIVE = 640;
+    localparam H_FRONT  = 16;
+    localparam H_SYNC   = 96;
+    localparam H_BACK   = 48;
+    localparam H_TOTAL  = 800;
 
-    parameter hsync_active = 0;
-    parameter vsync_active = 0;
-    reg [9:0] hCounter;
-    reg [9:0] vCounter;
-    reg [9:0] VCNT, HCNT;
-    reg [16:0] address;
-    reg        blank;
-    initial hCounter = 10'b0;
-    initial vCounter = 10'b0;
-    initial HCNT = 10'b0;
-    initial VCNT = 10'b0;
-    initial address = 17'b0;
-    initial blank = 1'b1;
+    localparam V_ACTIVE = 480;
+    localparam V_FRONT  = 10;
+    localparam V_SYNC   = 2;
+    localparam V_BACK   = 33;
+    localparam V_TOTAL  = 525;
 
-    assign frame_addr = address;
-    //   assign HCnt = hCounter;
-    //   assign VCnt = vCounter;
-    assign HCnt       = HCNT;
-    assign VCnt       = VCNT;
+    reg [9:0] r_h_cnt = 0;
+    reg [9:0] r_v_cnt = 0;
+    wire      active_video;
+
+    // Filter Logic setup
+    wire [3:0] r_in = frame_pixel[11:8];
+    wire [3:0] g_in = frame_pixel[7:4];
+    wire [3:0] b_in = frame_pixel[3:0];
+
+    // Grayscale (R/4 + G/2 + B/4)
+    wire [3:0] gray = (r_in >> 2) + (g_in >> 1) + (b_in >> 2);
+    // Binary Threshold
+    wire [3:0] thresh = (gray > 4'd7) ? 4'hF : 4'h0;
+
+    // Counters
     always @(posedge clk25) begin
-        if (hCounter == hMaxCount - 1) begin
-            hCounter <= 10'b0;
-            if (vCounter == vMaxCount - 1) vCounter <= 10'b0;
-            else vCounter <= vCounter + 1;
-        end else hCounter <= hCounter + 1;
-
-        if (blank == 0) begin
-            vga_red   <= frame_pixel[11:8];
-            vga_green <= frame_pixel[7:4];
-            vga_blue  <= frame_pixel[3:0];
+        if (r_h_cnt < H_TOTAL - 1) begin
+            r_h_cnt <= r_h_cnt + 1;
         end else begin
-            vga_red   <= 4'b0;
-            vga_green <= 4'b0;
-            vga_blue  <= 4'b0;
-        end
-        ;
-
-        if (vCounter >= vRez) begin
-            //		address <= 19'b0; 
-            blank <= 1;
-        end else begin
-            if (hCounter < 640) begin
-                blank <= 0;
-                //			address <= address+1;
-            end else blank <= 1;
-        end
-        ;
-
-        // Are we in the hSync pulse? (one has been added to include frame_buffer_latency)
-        if (hCounter > hStartSync && hCounter <= hEndSync) vga_hsync <= hsync_active;
-        else vga_hsync <= ~hsync_active;
-
-
-        // Are we in the vSync pulse?
-        if (vCounter >= vStartSync && vCounter < vEndSync) vga_vsync <= vsync_active;
-        else vga_vsync <= ~vsync_active;
-    end
-
-    always @(posedge vga_hsync) begin
-        if (vga_vsync == 1)
-            if (VCNT > 524) VCNT <= 0;
-            else VCNT <= VCNT + 1;
-        else VCNT <= 492;
-    end
-
-    always @(posedge clk25) begin
-        if (vga_hsync == 1)
-            if (HCNT > 799) HCNT <= 0;
-            else HCNT <= HCNT + 1;
-        else HCNT <= 753;
-    end
-
-    always @(posedge clk25) begin
-        if (VCNT >= 360 || VCNT < 120) begin
-            address <= 17'b0;
-        end else begin
-            if (HCNT < 480 && HCNT >= 160) begin
-                address <= address + 1;
+            r_h_cnt <= 0;
+            if (r_v_cnt < V_TOTAL - 1) begin
+                r_v_cnt <= r_v_cnt + 1;
+            end else begin
+                r_v_cnt <= 0;
             end
         end
-        ;
     end
+
+    // Sync Signals (Active Low)
+    always @(posedge clk25) begin
+        vga_hsync <= (r_h_cnt >= (H_ACTIVE + H_FRONT) && r_h_cnt < (H_ACTIVE + H_FRONT + H_SYNC)) ? 1'b0 : 1'b1;
+        vga_vsync <= (r_v_cnt >= (V_ACTIVE + V_FRONT) && r_v_cnt < (V_ACTIVE + V_FRONT + V_SYNC)) ? 1'b0 : 1'b1;
+    end
+
+    assign active_video = (r_h_cnt < H_ACTIVE && r_v_cnt < V_ACTIVE);
+
+    // Pixel Doubling & Address Generation (320x240 memory -> 640x480 screen)
+    always @(*) begin
+        if (active_video) begin
+            // Drops the LSB to divide coordinates by 2
+            frame_addr = (r_v_cnt[9:1] * 320) + r_h_cnt[9:1]; 
+        end else begin
+            frame_addr = 0;
+        end
+    end
+
+    // Output and Filter Selection
+    always @(posedge clk25) begin
+        if (active_video) begin
+            case (filter_sw)
+                2'b00: begin // RAW FEED
+                    vga_red   <= r_in;
+                    vga_green <= g_in;
+                    vga_blue  <= b_in;
+                end
+                2'b01: begin // FILTER 1: Grayscale
+                    vga_red   <= gray;
+                    vga_green <= gray;
+                    vga_blue  <= gray;
+                end
+                2'b10: begin // FILTER 2: Binary Threshold
+                    vga_red   <= thresh;
+                    vga_green <= thresh;
+                    vga_blue  <= thresh;
+                end
+                2'b11: begin // FILTER 3: Red Isolation
+                    vga_red   <= r_in;
+                    vga_green <= 4'b0;
+                    vga_blue  <= 4'b0;
+                end
+            endcase
+        end else begin
+            vga_red   <= 4'h0;
+            vga_green <= 4'h0;
+            vga_blue  <= 4'h0;
+        end
+    end
+
 endmodule
