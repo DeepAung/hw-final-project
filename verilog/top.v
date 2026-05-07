@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
-
 module top (
     input clk_100MHz,
     input reset,
+    input [1:0] sw,           // NEW: 2 slide switches for filter selection
 
     output        vga_hsync,
     output        vga_vsync,
@@ -45,13 +45,12 @@ module top (
     wire        capture_we;  // Write Enable from camera
 
     wire [16:0] display_addr;
-    wire [11:0] frame_pixel;  // Data read from RAM
-    wire [9:0] vga_x, vga_y;  // Current pixel coordinates
+    wire [11:0] frame_pixel; // Data read from RAM
 
     // Camera Configuration Hardware Pins
-    assign OV7670_PWDN = 1'b0;  // Power down: Normal mode
-    assign OV7670_RST  = 1'b1;  // Reset: Active low, so keep high
-    assign OV7670_XCLK = clk_25MHz;  // Camera needs a system clock
+    assign OV7670_PWDN = 1'b0; // Power down: Normal mode
+    assign OV7670_RST  = 1'b1; // Reset: Active low, so keep high
+    assign OV7670_XCLK = clk_25MHz; // Camera needs a system clock
 
     camera_capture capture (
         .pclk (OV7670_PCLK),
@@ -85,21 +84,16 @@ module top (
 
     // ---------------------- //
 
-    // Signal Declaration
-    reg  [11:0] rgb_reg;  // Registar for displaying color on a screen
-    wire        video_on;  // Same signal as in controller
-
     vga_display vga_display (
-        .clk25    (clk_25MHz),
-        .vga_red  (vga_rgb[11:8]),
-        .vga_green(vga_rgb[7:4]),
-        .vga_blue (vga_rgb[3:0]),
-        .vga_hsync(vga_hsync),
-        .vga_vsync(vga_vsync),
-        .HCnt     (),
-        .VCnt     (),
+        .clk25     (clk_25MHz),
+        .filter_sw (sw),               // Connect the switches to the display module
+        .vga_red   (vga_rgb[11:8]),
+        .vga_green (vga_rgb[7:4]),
+        .vga_blue  (vga_rgb[3:0]),
+        .vga_hsync (vga_hsync),
+        .vga_vsync (vga_vsync),
 
-        .frame_addr (frame_addr),
+        .frame_addr (display_addr),    // FIXED: Connected properly to BRAM read address
         .frame_pixel(frame_pixel)
     );
 
