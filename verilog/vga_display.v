@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// VGA display controller — 640x480 @ 60 Hz with pixel-doubling for 320x240 frame buffer.
+// Filter selection is combinational via image_filter module; output is registered.
+//
+// filter_sw:  00=raw  01=grayscale  10=inversion  11=red-only
 module vga_display (
     input            clk25,
     input      [1:0] filter_sw,
@@ -12,7 +16,7 @@ module vga_display (
     input      [11:0] frame_pixel
 );
 
-    // VGA 640x480 @ 60Hz Timing Constants
+    // VGA 640x480 @ 60 Hz timing constants (25 MHz pixel clock)
     localparam H_ACTIVE = 640;
     localparam H_FRONT  = 16;
     localparam H_SYNC   = 96;
@@ -29,73 +33,60 @@ module vga_display (
     reg [9:0] r_v_cnt = 0;
     wire      active_video;
 
-    // Filter Logic setup
-    wire [3:0] r_in = frame_pixel[11:8];
-    wire [3:0] g_in = frame_pixel[7:4];
-    wire [3:0] b_in = frame_pixel[3:0];
-
-    // Grayscale (R/4 + G/2 + B/4)
-    wire [3:0] gray = (r_in >> 2) + (g_in >> 1) + (b_in >> 2);
-    // Binary Threshold
-    wire [3:0] thresh = (gray > 4'd7) ? 4'hF : 4'h0;
-
-    // Counters
+    // Horizontal and vertical counters
     always @(posedge clk25) begin
         if (r_h_cnt < H_TOTAL - 1) begin
             r_h_cnt <= r_h_cnt + 1;
         end else begin
             r_h_cnt <= 0;
-            if (r_v_cnt < V_TOTAL - 1) begin
+            if (r_v_cnt < V_TOTAL - 1)
                 r_v_cnt <= r_v_cnt + 1;
-            end else begin
+            else
                 r_v_cnt <= 0;
-            end
         end
     end
 
-    // Sync Signals (Active Low)
+    // Sync signals — active low per VGA standard
     always @(posedge clk25) begin
-        vga_hsync <= (r_h_cnt >= (H_ACTIVE + H_FRONT) && r_h_cnt < (H_ACTIVE + H_FRONT + H_SYNC)) ? 1'b0 : 1'b1;
-        vga_vsync <= (r_v_cnt >= (V_ACTIVE + V_FRONT) && r_v_cnt < (V_ACTIVE + V_FRONT + V_SYNC)) ? 1'b0 : 1'b1;
+        vga_hsync <= ~(r_h_cnt >= (H_ACTIVE + H_FRONT) &&
+                       r_h_cnt <  (H_ACTIVE + H_FRONT + H_SYNC));
+        vga_vsync <= ~(r_v_cnt >= (V_ACTIVE + V_FRONT) &&
+                       r_v_cnt <  (V_ACTIVE + V_FRONT + V_SYNC));
     end
 
     assign active_video = (r_h_cnt < H_ACTIVE && r_v_cnt < V_ACTIVE);
 
-    // Pixel Doubling & Address Generation (320x240 memory -> 640x480 screen)
+    // Frame-buffer address: pixel-double 320x240 → 640x480 by dropping LSB of each axis
     always @(*) begin
-        if (active_video) begin
-            // Drops the LSB to divide coordinates by 2
-            frame_addr = (r_v_cnt[9:1] * 320) + r_h_cnt[9:1]; 
-        end else begin
-            frame_addr = 0;
-        end
+        if (active_video)
+            frame_addr = ({7'b0, r_v_cnt[9:1]} * 17'd320) + {8'b0, r_h_cnt[9:1]};
+        else
+            frame_addr = 17'd0;
     end
 
-    // Output and Filter Selection
+    // Unpack the 12-bit pixel (RGB444) from the frame buffer
+    wire [3:0] r_in = frame_pixel[11:8];
+    wire [3:0] g_in = frame_pixel[7:4];
+    wire [3:0] b_in = frame_pixel[3:0];
+
+    // Filtered pixel (combinational — zero added latency)
+    wire [3:0] r_filt, g_filt, b_filt;
+    image_filter filter_inst (
+        .filter_sw(filter_sw),
+        .r_in     (r_in),
+        .g_in     (g_in),
+        .b_in     (b_in),
+        .r_out    (r_filt),
+        .g_out    (g_filt),
+        .b_out    (b_filt)
+    );
+
+    // Register filtered pixel to VGA outputs; blank outside active region
     always @(posedge clk25) begin
         if (active_video) begin
-            case (filter_sw)
-                2'b00: begin // RAW FEED
-                    vga_red   <= r_in;
-                    vga_green <= g_in;
-                    vga_blue  <= b_in;
-                end
-                2'b01: begin // FILTER 1: Grayscale
-                    vga_red   <= gray;
-                    vga_green <= gray;
-                    vga_blue  <= gray;
-                end
-                2'b10: begin // FILTER 2: Binary Threshold
-                    vga_red   <= thresh;
-                    vga_green <= thresh;
-                    vga_blue  <= thresh;
-                end
-                2'b11: begin // FILTER 3: Red Isolation
-                    vga_red   <= r_in;
-                    vga_green <= 4'b0;
-                    vga_blue  <= 4'b0;
-                end
-            endcase
+            vga_red   <= r_filt;
+            vga_green <= g_filt;
+            vga_blue  <= b_filt;
         end else begin
             vga_red   <= 4'h0;
             vga_green <= 4'h0;
