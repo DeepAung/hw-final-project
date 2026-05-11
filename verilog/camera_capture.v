@@ -3,47 +3,53 @@ module camera_capture (
     input             vsync,
     input             href,
     input      [ 7:0] d,
-    output     [16:0] addr,
-    output     [11:0] dout,
+    output reg [16:0] addr,
+    output reg [11:0] dout,
     output reg        we
 );
-    reg [15:0] d_latch;
-    reg [16:0] address;
-    reg [16:0] address_next;
-    reg [ 1:0] wr_hold;
-    reg [ 1:0] cnt;
-    reg [11:0] dout1;
-    initial d_latch = 16'b0;
-    initial address = 19'b0;
-    initial address_next = 19'b0;
-    initial wr_hold = 2'b0;
-    initial cnt = 2'b0;
-    assign addr = address;
+    reg       byte_half;
+    reg [7:0] byte1_latch;
+
+    initial begin
+        addr = 17'b0;
+        dout = 12'b0;
+        we = 1'b0;
+        byte_half = 1'b0;
+        byte1_latch = 8'b0;
+    end
 
     always @(posedge pclk) begin
-        if (vsync == 1) begin
-            address      <= 17'b0;
-            address_next <= 17'b0;
-            wr_hold      <= 2'b0;
-            cnt          <= 2'b0;
-        end else begin
-            if (address < 76800) address <= address_next;
-            else address <= 76800;
-            we      <= wr_hold[1];
-            wr_hold <= {wr_hold[0], (href && (!wr_hold[0]))};
-            d_latch <= {d_latch[7:0], d};
+        // Default WE to 0 so it pulses for 1 clock cycle
+        we <= 1'b0;
 
-            if (wr_hold[1] == 1) begin
-
-                address_next <= address_next + 1;
-
-                dout1[11:0]  <= {d_latch[15:12], d_latch[10:7], d_latch[4:1]};
-
-
+        // 1. Handle Memory Addressing
+        if (vsync == 1'b1) begin
+            addr <= 17'b0;
+        end else if (we == 1'b1) begin
+            // Increment address after a successful write
+            if (addr < 17'd76799) begin
+                addr <= addr + 1'b1;
             end
-
         end
-        ;
+
+        // 2. Handle Pixel Construction
+        if (vsync == 1'b1) begin
+            byte_half <= 1'b0;
+        end else if (href == 1'b1) begin
+            if (byte_half == 1'b0) begin
+                // First Byte (Red and Top Green bits)
+                byte1_latch <= d;
+                byte_half   <= 1'b1;
+            end else begin
+                // Second Byte (Bottom Green and Blue bits)
+                // Maps OV7670 RGB565 to Basys3 12-bit RGB
+                dout      <= {byte1_latch[7:4], byte1_latch[2:0], d[7], d[4:1]};
+                we        <= 1'b1;
+                byte_half <= 1'b0;
+            end
+        end else begin
+            // Reset byte state if href drops unexpectedly between lines
+            byte_half <= 1'b0;
+        end
     end
-    assign dout = dout1;
 endmodule
