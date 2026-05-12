@@ -29,10 +29,18 @@ module vga_display (
     reg [9:0] r_v_cnt = 0;
     wire      active_video;
 
+    wire [9:0] next_h_cnt;
+    wire [9:0] next_v_cnt;
+    wire       next_active_video;
+    wire [16:0] next_frame_addr;
+
+    reg [11:0] r_frame_pixel = 12'b0;
+    reg         r_active_video = 1'b0;
+
     // Filter Logic setup
-    wire [3:0] r_in = frame_pixel[11:8];
-    wire [3:0] g_in = frame_pixel[7:4];
-    wire [3:0] b_in = frame_pixel[3:0];
+    wire [3:0] r_in = r_frame_pixel[11:8];
+    wire [3:0] g_in = r_frame_pixel[7:4];
+    wire [3:0] b_in = r_frame_pixel[3:0];
 
     // Grayscale (R/4 + G/2 + B/4)
     wire [3:0] gray = (r_in >> 2) + (g_in >> 1) + (b_in >> 2);
@@ -60,20 +68,21 @@ module vga_display (
     end
 
     assign active_video = (r_h_cnt < H_ACTIVE && r_v_cnt < V_ACTIVE);
+    assign next_h_cnt = (r_h_cnt == H_TOTAL - 1) ? 10'b0 : r_h_cnt + 1;
+    assign next_v_cnt = (r_h_cnt == H_TOTAL - 1) ? ((r_v_cnt == V_TOTAL - 1) ? 10'b0 : r_v_cnt + 1) : r_v_cnt;
+    assign next_active_video = (next_h_cnt < H_ACTIVE && next_v_cnt < V_ACTIVE);
+    assign next_frame_addr = next_active_video ? (next_v_cnt[9:1] * 320) + next_h_cnt[9:1] : 17'b0;
 
     // Pixel Doubling & Address Generation (320x240 memory -> 640x480 screen)
-    always @(*) begin
-        if (active_video) begin
-            // Drops the LSB to divide coordinates by 2
-            frame_addr = (r_v_cnt[9:1] * 320) + r_h_cnt[9:1]; 
-        end else begin
-            frame_addr = 0;
-        end
+    always @(posedge clk25) begin
+        frame_addr     <= next_frame_addr;
+        r_frame_pixel  <= frame_pixel;
+        r_active_video <= next_active_video;
     end
 
     // Output and Filter Selection
     always @(posedge clk25) begin
-        if (active_video) begin
+        if (r_active_video) begin
             case (filter_sw)
                 2'b00: begin // RAW FEED
                     vga_red   <= r_in;
