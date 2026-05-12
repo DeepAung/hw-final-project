@@ -25,6 +25,7 @@ module top (
     wire clk_25MHz;
     clock_gen clock_gen_inst (
         .clk_100MHz(clk_100MHz),
+        .reset     (reset),
         .clk_50MHz (clk_50MHz),
         .clk_25MHz (clk_25MHz)
     );
@@ -43,6 +44,7 @@ module top (
     wire [16:0] capture_addr;
     wire [11:0] capture_data;
     wire        capture_we;  // Write Enable from camera
+    wire        capture_frame_done;
 
     wire [16:0] display_addr;
     wire [11:0] frame_pixel; // Data read from RAM
@@ -59,8 +61,30 @@ module top (
         .d    (OV7670_D),
         .addr (capture_addr),
         .dout (capture_data),
-        .we   (capture_we)
+        .we   (capture_we),
+        .frame_done(capture_frame_done)
     );
+
+    reg capture_frame_done_toggle = 1'b0;
+    always @(posedge OV7670_PCLK) begin
+        if (capture_frame_done) begin
+            capture_frame_done_toggle <= ~capture_frame_done_toggle;
+        end
+    end
+
+    reg [2:0] frame_done_sync = 3'b0;
+    always @(posedge clk_25MHz) begin
+        frame_done_sync <= {frame_done_sync[1:0], capture_frame_done_toggle};
+    end
+
+    reg frame_valid = 1'b0;
+    always @(posedge clk_25MHz) begin
+        if (reset_debounced) begin
+            frame_valid <= 1'b0;
+        end else if (frame_done_sync[2] ^ frame_done_sync[1]) begin
+            frame_valid <= 1'b1;
+        end
+    end
 
     blk_mem_gen_0 u_frame_buffer (
         .clka (OV7670_PCLK),
@@ -86,6 +110,7 @@ module top (
 
     vga_display vga_display (
         .clk25     (clk_25MHz),
+        .frame_valid(frame_valid),
         .filter_sw (sw),               // Connect the switches to the display module
         .vga_red   (vga_rgb[11:8]),
         .vga_green (vga_rgb[7:4]),

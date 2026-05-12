@@ -1,6 +1,6 @@
 import cocotb
 from cocotb.clock import Clock
-from cocotb.triggers import RisingEdge, Timer
+from cocotb.triggers import FallingEdge, RisingEdge, Timer
 
 @cocotb.test()
 async def test_memory_addressing(dut):
@@ -25,15 +25,16 @@ async def test_memory_addressing(dut):
     dut.d.value = 0x0F
     await RisingEdge(dut.pclk)
     
-    # Cycle 3: WE should trigger immediately upon the 2nd byte finishing
+    # WE is generated on the falling PCLK edge and held for the next rising
+    # edge, matching the BRAM write clock.
     dut.href.value = 0
-    await RisingEdge(dut.pclk)
+    await FallingEdge(dut.pclk)
     
     assert dut.we.value == 1, "Write Enable was not asserted!"
     assert int(dut.addr.value) == 0, "Address should still be 0 while WE is high"
     
     # Cycle 4: Address increments AFTER the write finishes
-    await RisingEdge(dut.pclk)
+    await FallingEdge(dut.pclk)
     assert int(dut.addr.value) == 1, "Memory Address did not increment after write!"
     
     print("Memory addressing synchronized perfectly.")

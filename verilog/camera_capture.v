@@ -5,25 +5,34 @@ module camera_capture (
     input      [ 7:0] d,
     output reg [16:0] addr,
     output reg [11:0] dout,
-    output reg        we
+    output reg        we,
+    output reg        frame_done
 );
     reg       byte_half;
     reg [7:0] byte1_latch;
+    reg       vsync_prev;
 
     initial begin
         addr = 17'b0;
         dout = 12'b0;
         we = 1'b0;
+        frame_done = 1'b0;
         byte_half = 1'b0;
         byte1_latch = 8'b0;
+        vsync_prev = 1'b0;
     end
 
     always @(negedge pclk) begin
-        // Default WE to 0 so it pulses for 1 clock cycle
-        we <= 1'b0;
+        // Default pulse outputs to 0.
+        we         <= 1'b0;
+        frame_done <= 1'b0;
+        vsync_prev <= vsync;
 
         // 1. Handle Memory Addressing
         if (vsync == 1'b1) begin
+            if (vsync_prev == 1'b0 && addr != 17'b0) begin
+                frame_done <= 1'b1;
+            end
             addr <= 17'b0;
         end else if (we == 1'b1) begin
             // Increment address after a successful write

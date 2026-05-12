@@ -21,6 +21,7 @@ module top_test (
     wire clk_25MHz;
     clock_gen clock_gen_inst (
         .clk_100MHz(clk_100MHz),
+        .reset     (reset),
         .clk_50MHz (clk_50MHz),
         .clk_25MHz (clk_25MHz)
     );

@@ -2,6 +2,7 @@
 
 module vga_display (
     input            clk25,
+    input            frame_valid,
     input      [1:0] filter_sw,
     output reg [3:0] vga_red,
     output reg [3:0] vga_green,
@@ -24,18 +25,27 @@ module vga_display (
     localparam V_SYNC   = 2;
     localparam V_BACK   = 33;
     localparam V_TOTAL  = 525;
+    localparam LEFT_GUARD_PIXELS = 16;
 
     reg [9:0] r_h_cnt = 0;
     reg [9:0] r_v_cnt = 0;
     wire      active_video;
 
-    wire [9:0] next_h_cnt;
-    wire [9:0] next_v_cnt;
-    wire       next_active_video;
-    wire [16:0] next_frame_addr;
-
     reg [11:0] r_frame_pixel = 12'b0;
-    reg         r_active_video = 1'b0;
+    reg         active_d1 = 1'b0;
+    reg         active_d2 = 1'b0;
+    reg         active_d3 = 1'b0;
+    reg [9:0]   h_cnt_d1 = 10'b0;
+    reg [9:0]   h_cnt_d2 = 10'b0;
+    reg [9:0]   h_cnt_d3 = 10'b0;
+    reg [3:0]   hsync_delay = 4'b1111;
+    reg [3:0]   vsync_delay = 4'b1111;
+
+    wire [8:0] buf_col;
+    wire [7:0] buf_row;
+    wire [16:0] current_frame_addr;
+    wire hsync_raw;
+    wire vsync_raw;
 
     // Filter Logic setup
     wire [3:0] r_in = r_frame_pixel[11:8];
@@ -61,28 +71,33 @@ module vga_display (
         end
     end
 
-    // Sync Signals (Active Low)
-    always @(posedge clk25) begin
-        vga_hsync <= (r_h_cnt >= (H_ACTIVE + H_FRONT) && r_h_cnt < (H_ACTIVE + H_FRONT + H_SYNC)) ? 1'b0 : 1'b1;
-        vga_vsync <= (r_v_cnt >= (V_ACTIVE + V_FRONT) && r_v_cnt < (V_ACTIVE + V_FRONT + V_SYNC)) ? 1'b0 : 1'b1;
-    end
-
     assign active_video = (r_h_cnt < H_ACTIVE && r_v_cnt < V_ACTIVE);
-    assign next_h_cnt = (r_h_cnt == H_TOTAL - 1) ? 10'b0 : r_h_cnt + 1;
-    assign next_v_cnt = (r_h_cnt == H_TOTAL - 1) ? ((r_v_cnt == V_TOTAL - 1) ? 10'b0 : r_v_cnt + 1) : r_v_cnt;
-    assign next_active_video = (next_h_cnt < H_ACTIVE && next_v_cnt < V_ACTIVE);
-    assign next_frame_addr = next_active_video ? (next_v_cnt[9:1] * 320) + next_h_cnt[9:1] : 17'b0;
+    assign hsync_raw = (r_h_cnt >= (H_ACTIVE + H_FRONT) && r_h_cnt < (H_ACTIVE + H_FRONT + H_SYNC)) ? 1'b0 : 1'b1;
+    assign vsync_raw = (r_v_cnt >= (V_ACTIVE + V_FRONT) && r_v_cnt < (V_ACTIVE + V_FRONT + V_SYNC)) ? 1'b0 : 1'b1;
+    assign buf_col = r_h_cnt[9:1];
+    assign buf_row = r_v_cnt[9:1];
+    assign current_frame_addr = ({9'd0, buf_row} << 8) + ({9'd0, buf_row} << 6) + {8'd0, buf_col};
 
-    // Pixel Doubling & Address Generation (320x240 memory -> 640x480 screen)
+    // Pixel Doubling & Address Generation (320x240 memory -> 640x480 screen).
+    // Delay active/sync to match the BRAM read and RGB output pipeline.
     always @(posedge clk25) begin
-        frame_addr     <= next_frame_addr;
+        frame_addr     <= active_video ? current_frame_addr : 17'b0;
         r_frame_pixel  <= frame_pixel;
-        r_active_video <= next_active_video;
+        active_d1      <= active_video;
+        active_d2      <= active_d1;
+        active_d3      <= active_d2;
+        h_cnt_d1       <= r_h_cnt;
+        h_cnt_d2       <= h_cnt_d1;
+        h_cnt_d3       <= h_cnt_d2;
+        hsync_delay    <= {hsync_delay[2:0], hsync_raw};
+        vsync_delay    <= {vsync_delay[2:0], vsync_raw};
+        vga_hsync      <= hsync_delay[3];
+        vga_vsync      <= vsync_delay[3];
     end
 
     // Output and Filter Selection
     always @(posedge clk25) begin
-        if (r_active_video) begin
+        if (active_d3 && frame_valid && h_cnt_d3 >= LEFT_GUARD_PIXELS) begin
             case (filter_sw)
                 2'b00: begin // RAW FEED
                     vga_red   <= r_in;

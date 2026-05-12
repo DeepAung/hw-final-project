@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.2
-| Date         : Tue May 12 12:19:10 2026
+| Date         : Tue May 12 15:59:15 2026
 | Host         : archlinux
 | Design       : design_1
 | Device       : xc7a35t-cpg236-1--

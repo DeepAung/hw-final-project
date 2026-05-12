@@ -7,6 +7,7 @@ async def vga_timing_test(dut):
     # 1. Start a 25MHz clock attached to the 'clk25' port (40ns period)
     clock = Clock(dut.clk25, 40, units="ns")
     cocotb.start_soon(clock.start())
+    dut.frame_valid.value = 1
 
     # Wait a few clock cycles for the initialized registers (0) to stabilize
     await Timer(100, units="ns")
@@ -31,13 +32,14 @@ async def vga_timing_test(dut):
 @cocotb.test()
 async def test_image_filters(dut):
     cocotb.start_soon(Clock(dut.clk25, 40, units="ns").start())
+    dut.frame_valid.value = 1
     
     # Fast forward the simulation until we enter the "Active Video" area
     # (Where the frame address begins to increment)
     print("Fast-forwarding to active video region...")
     for _ in range(500000):
         await RisingEdge(dut.clk25)
-        if dut.frame_addr.value.integer > 0:
+        if dut.frame_addr.value.integer > 8:
             break
             
     # Inject a known pixel (e.g., Pure Blue: Red=0, Green=0, Blue=F)
@@ -46,8 +48,8 @@ async def test_image_filters(dut):
     
     # Test 1: RAW FEED (sw = 00)
     dut.filter_sw.value = 0b00
-    await RisingEdge(dut.clk25)
-    await RisingEdge(dut.clk25) # Wait for output register
+    for _ in range(20):
+        await RisingEdge(dut.clk25)
     assert dut.vga_blue.value == 0xF, "Raw feed failed on Blue channel"
     assert dut.vga_red.value == 0x0, "Raw feed failed on Red channel"
     
@@ -55,8 +57,8 @@ async def test_image_filters(dut):
     # Inject a Magenta pixel (Red=F, Green=0, Blue=F) -> 0xF0F
     dut.frame_pixel.value = 0xF0F
     dut.filter_sw.value = 0b11
-    await RisingEdge(dut.clk25)
-    await RisingEdge(dut.clk25)
+    for _ in range(20):
+        await RisingEdge(dut.clk25)
     assert dut.vga_red.value == 0xF, "Red isolation failed: Red channel blocked"
     assert dut.vga_blue.value == 0x0, "Red isolation failed: Blue channel let through"
     
