@@ -18,7 +18,7 @@ module camera_capture (
         byte1_latch = 8'b0;
     end
 
-    always @(posedge pclk) begin
+    always @(negedge pclk) begin
         // Default WE to 0 so it pulses for 1 clock cycle
         we <= 1'b0;
 
