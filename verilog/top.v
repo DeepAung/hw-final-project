@@ -20,48 +20,49 @@ module top (
     output       OV7670_XCLK
 );
 
-    // Clock generator
-    wire clk_50MHz;
+    // -----------------------------------------------------------------------
+    // Hardware Clocking Wizard (MMCM)
+    // -----------------------------------------------------------------------
     wire clk_25MHz;
-    clock_gen clock_gen_inst (
-        .clk_100MHz(clk_100MHz),
-        .reset     (reset),
-        .clk_50MHz (clk_50MHz),
-        .clk_25MHz (clk_25MHz)
+    wire locked;
+    
+    clk_wiz_0 u_clk_wiz (
+        .clk_in1  (clk_100MHz),
+        .reset    (reset),
+        .clk_out1 (clk_25MHz),
+        .locked   (locked)
     );
 
-    // Reset btn debouncer
-    wire reset_debounced;
-    debounce debounce_inst (
-        .clk(clk_50MHz),
-        .i  (reset),
-        .o  (reset_debounced)
-    );
-
-    // ---------------------- //
-
+    // System Reset: Active high when button is pressed OR clocks are unstable
+    wire sys_reset = reset | ~locked;
+    
+    // -----------------------------------------------------------------------
     // Internal Signals
+    // -----------------------------------------------------------------------
     wire [16:0] capture_addr;
     wire [11:0] capture_data;
-    wire        capture_we;  // Write Enable from camera
+    wire        capture_we;  
     wire        capture_frame_done;
 
     wire [16:0] display_addr;
-    wire [11:0] frame_pixel; // Data read from RAM
+    wire [11:0] frame_pixel; 
 
     // Camera Configuration Hardware Pins
-    assign OV7670_PWDN = 1'b0; // Power down: Normal mode
-    assign OV7670_RST  = 1'b1; // Reset: Active low, so keep high
-    assign OV7670_XCLK = clk_25MHz; // Camera needs a system clock
+    assign OV7670_PWDN = 1'b0; 
+    assign OV7670_RST  = 1'b1; 
+    assign OV7670_XCLK = clk_25MHz; 
 
+    // -----------------------------------------------------------------------
+    // Sub-Modules
+    // -----------------------------------------------------------------------
     camera_capture capture (
-        .pclk (OV7670_PCLK),
-        .vsync(OV7670_VSYNC),
-        .href (OV7670_HREF),
-        .d    (OV7670_D),
-        .addr (capture_addr),
-        .dout (capture_data),
-        .we   (capture_we),
+        .pclk      (OV7670_PCLK),
+        .vsync     (OV7670_VSYNC),
+        .href      (OV7670_HREF),
+        .d         (OV7670_D),
+        .addr      (capture_addr),
+        .dout      (capture_data),
+        .we        (capture_we),
         .frame_done(capture_frame_done)
     );
 
@@ -73,14 +74,15 @@ module top (
         end
     end
 
-    reg [2:0] frame_done_sync = 3'b0;
+    // The ASYNC_REG tag ensures Vivado places these flip-flops together physically
+    (* ASYNC_REG = "TRUE" *) reg [2:0] frame_done_sync = 3'b0;
     always @(posedge clk_25MHz) begin
         frame_done_sync <= {frame_done_sync[1:0], capture_frame_done_toggle};
     end
 
     reg frame_valid = 1'b0;
     always @(posedge clk_25MHz) begin
-        if (reset_debounced) begin
+        if (sys_reset) begin
             frame_valid <= 1'b0;
         end else if (frame_done_sync[2] ^ frame_done_sync[1]) begin
             frame_valid <= 1'b1;
@@ -88,28 +90,25 @@ module top (
     end
 
     blk_mem_gen_0 u_frame_buffer (
-        .clka (OV7670_PCLK),
-        .wea  (capture_we),
-        .addra(capture_addr),
-        .dina (capture_data),
-        .clkb (clk_25MHz),
-        .addrb(display_addr),
-        .doutb(frame_pixel)
+        .clka  (OV7670_PCLK),
+        .wea   (capture_we),
+        .addra (capture_addr),
+        .dina  (capture_data),
+        .clkb  (clk_25MHz),
+        .addrb (display_addr),
+        .doutb (frame_pixel)
     );
 
     I2C_AV_Config IIC (
         .iCLK       (clk_25MHz),
-        .iRST_N     (!reset_debounced),
+        .iRST_N     (~sys_reset), // Active Low Reset
         .Config_Done(),
         .I2C_SDAT   (OV7670_SDAT),
         .I2C_SCLK   (OV7670_SCLK),
         .LUT_INDEX  (),
         .I2C_RDATA  ()
     );
-
-    // ---------------------- //
     
-    // Internal wires to hold the un-delayed sync signals
     wire hsync_raw;
     wire vsync_raw;
 
@@ -120,11 +119,8 @@ module top (
         .vga_red    (vga_rgb[11:8]),
         .vga_green  (vga_rgb[7:4]),
         .vga_blue   (vga_rgb[3:0]),
-        
-        // Output to internal raw wires instead of directly to top module ports
         .vga_hsync  (hsync_raw),
         .vga_vsync  (vsync_raw),
-
         .frame_addr (display_addr),    
         .frame_pixel(frame_pixel)
     );
@@ -141,8 +137,7 @@ module top (
         vsync_delay <= {vsync_delay[0], vsync_raw};
     end
     
-    // Assign the delayed signals to the actual VGA output pins
     assign vga_hsync = hsync_delay[1]; 
     assign vga_vsync = vsync_delay[1];
 
-endmodule
+endmodule 
