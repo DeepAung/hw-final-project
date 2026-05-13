@@ -1,20 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="deepaung" Host="archlinux" Pid="347296" HostCore="8" HostMemory="16055648">
+    <Process Command="vivado.bat" Owner="USER" Host="LAPTOP-8BRP0F0O" Pid="28244" HostCore="32" HostMemory="016779948032">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="deepaung" Host="archlinux" Pid="349251" HostCore="8" HostMemory="16055648">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="deepaung" Host="archlinux" Pid="369701" HostCore="8" HostMemory="16055648">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="deepaung" Host="archlinux" Pid="384382" HostCore="8" HostMemory="16055648">
+    <Process Command="vivado.bat" Owner="USER" Host="LAPTOP-8BRP0F0O" Pid="37844" HostCore="32" HostMemory="016779948032">
     </Process>
 </ProcessHandle>

@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Tue May 12 15:20:57 2026
-// Host        : archlinux running 64-bit Arch Linux
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Tue May 12 16:11:23 2026
+// Host        : LAPTOP-8BRP0F0O running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_stub.v
+//               c:/Users/USER/Hardware_Synthesis_Workspace/final_project/hw-final-project/vivado/vivado.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_stub.v
 // Design      : clk_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1
