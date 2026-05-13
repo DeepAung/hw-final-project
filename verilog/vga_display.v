@@ -28,7 +28,7 @@ module vga_display (
     reg [9:0] r_h_cnt = 0;
     reg [9:0] r_v_cnt = 0;
 
-    // Counters: นับตำแหน่ง X, Y ปกติ
+    // Counters: track the current X and Y positions.
     always @(posedge clk25) begin
         if (r_h_cnt < H_TOTAL - 1) begin
             r_h_cnt <= r_h_cnt + 1;
@@ -43,7 +43,7 @@ module vga_display (
     end
 
     // ----------------------------------------------------
-    // PIPELINE STAGE 1: สร้าง BRAM Address และ Sync ชั่วคราว
+    // PIPELINE STAGE 1: generate the BRAM address and temporary sync signals.
     // ----------------------------------------------------
     reg p1_hsync, p1_vsync, p1_active;
     always @(posedge clk25) begin
@@ -51,7 +51,7 @@ module vga_display (
         p1_vsync  <= (r_v_cnt >= (V_ACTIVE + V_FRONT) && r_v_cnt < (V_ACTIVE + V_FRONT + V_SYNC)) ? 1'b0 : 1'b1;
         p1_active <= (r_h_cnt < H_ACTIVE && r_v_cnt < V_ACTIVE);
         
-        // ส่ง Address ไปขอข้อมูลจาก BRAM (Pixel Doubling)
+        // Send the address to fetch data from BRAM using pixel doubling.
         if (r_h_cnt < H_ACTIVE && r_v_cnt < V_ACTIVE) begin
             frame_addr <= (r_v_cnt[9:1] * 320) + r_h_cnt[9:1];
         end else begin
@@ -60,9 +60,9 @@ module vga_display (
     end
 
     // ----------------------------------------------------
-    // PIPELINE STAGE 2: รอ BRAM ดึงข้อมูล (Latency Delay)
+    // PIPELINE STAGE 2: wait for BRAM to fetch data, adding latency delay.
     // ----------------------------------------------------
-    // ใน Clock นี้ BRAM กำลังดึงข้อมูล เราจึงต้องหน่วง Sync ไว้ 1 Clock เพื่อรอ
+    // BRAM fetches data during this clock, so delay sync by one clock to match.
     reg p2_hsync, p2_vsync, p2_active;
     always @(posedge clk25) begin
         p2_hsync  <= p1_hsync;
@@ -70,7 +70,7 @@ module vga_display (
         p2_active <= p1_active;
     end
 
-    // เตรียม Filter Logic (เป็น Combinational logic จากข้อมูลที่ได้มาจาก BRAM)
+    // Prepare filter logic as combinational logic from the BRAM pixel data.
     wire [3:0] r_in = frame_pixel[11:8];
     wire [3:0] g_in = frame_pixel[7:4];
     wire [3:0] b_in = frame_pixel[3:0];
@@ -78,9 +78,9 @@ module vga_display (
     wire [3:0] thresh = (gray > 4'd7) ? 4'hF : 4'h0;
 
     // ----------------------------------------------------
-    // PIPELINE STAGE 3: ข้อมูลพร้อม ส่งออกจอภาพ
+    // PIPELINE STAGE 3: data is ready; drive the display outputs.
     // ----------------------------------------------------
-    // Sync และ ข้อมูลภาพ เดินทางมาถึงจุดนี้พร้อมกันพอดีเป๊ะ
+    // Sync and pixel data arrive at this point aligned.
     always @(posedge clk25) begin
         vga_hsync <= p2_hsync;
         vga_vsync <= p2_vsync;

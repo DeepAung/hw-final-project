@@ -17,54 +17,54 @@ module camera_capture (
     reg       href_prev;
 
     initial begin
-        addr = 0;
-        dout = 0;
-        we = 0;
-        x_cnt = 0;
-        y_cnt = 0;
-        byte_half = 0;
+        addr        = 0;
+        dout        = 0;
+        we          = 0;
+        x_cnt       = 0;
+        y_cnt       = 0;
+        byte_half   = 0;
         byte1_latch = 0;
-        href_prev = 0;
+        href_prev   = 0;
     end
 
     always @(negedge pclk) begin
-        we <= 1'b0;
+        we        <= 1'b0;
         href_prev <= href;
 
-        // VSYNC: สัญญาณเริ่มเฟรมใหม่ (รีเซ็ตตำแหน่งกลับไปบรรทัดแรก)
+        // VSYNC: start of a new frame; reset back to the first line.
         if (vsync == 1'b1) begin
-            x_cnt <= 0;
-            y_cnt <= 0;
+            x_cnt     <= 0;
+            y_cnt     <= 0;
             byte_half <= 0;
         end else begin
-            // จับขอบขาลงของ HREF (จบ 1 บรรทัด)
+            // Detect the falling edge of HREF, which marks the end of one line.
             if (href_prev == 1'b1 && href == 1'b0) begin
-                x_cnt <= 0;
+                x_cnt     <= 0;
                 byte_half <= 0;
                 if (y_cnt < 240) begin
-                    y_cnt <= y_cnt + 1; // เลื่อนลงบรรทัดถัดไป
+                    y_cnt <= y_cnt + 1; // Move down to the next line.
                 end
             end
 
-            // HREF: กล้องกำลังส่งข้อมูลพิกเซลมาให้
+            // HREF: the camera is currently sending pixel data.
             if (href == 1'b1) begin
                 if (byte_half == 1'b0) begin
-                    byte1_latch <= d; // เก็บ Byte แรกไว้
+                    byte1_latch <= d;  // Store the first byte.
                     byte_half   <= 1'b1;
                 end else begin
-                    // กรองรับเฉพาะพิกเซลที่อยู่ในกรอบ 320x240 เท่านั้น
+                    // Accept only pixels inside the 320x240 frame.
                     if (x_cnt < 320 && y_cnt < 240) begin
-                        
-                        // คำนวณ Address ใหม่โดยใช้ Shift Bit (เร็วกว่าการคูณ Y * 320)
+
+                        // Compute the address using shifts instead of Y * 320.
                         // 320 = 256 + 64 = (y << 8) + (y << 6)
                         addr <= (y_cnt << 8) + (y_cnt << 6) + x_cnt;
-                        
-                        // ประกอบ RGB565 เป็น 4-bit (12-bit color)
+
+                        // Pack RGB565 into 4-bit channels for 12-bit color.
                         dout <= {byte1_latch[7:4], byte1_latch[2:0], d[7], d[4:1]};
                         we   <= 1'b1;
                     end
-                    
-                    x_cnt <= x_cnt + 1; // ขยับแกน X
+
+                    x_cnt     <= x_cnt + 1;  // Advance along the X axis.
                     byte_half <= 1'b0;
                 end
             end
