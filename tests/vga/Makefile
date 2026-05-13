@@ -6,6 +6,7 @@ TOPLEVEL_LANG ?= verilog
 PROJ_ROOT := $(shell pwd)/../..
 
 # Point to the actual Verilog source file
+VERILOG_SOURCES += $(PROJ_ROOT)/verilog/image_filter.v
 VERILOG_SOURCES += $(PROJ_ROOT)/verilog/vga_display.v
 
 TOPLEVEL = vga_display

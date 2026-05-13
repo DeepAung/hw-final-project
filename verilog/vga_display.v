@@ -70,12 +70,12 @@ module vga_display (
         p2_active <= p1_active;
     end
 
-    // Prepare filter logic as combinational logic from the BRAM pixel data.
-    wire [3:0] r_in = frame_pixel[11:8];
-    wire [3:0] g_in = frame_pixel[7:4];
-    wire [3:0] b_in = frame_pixel[3:0];
-    wire [3:0] gray = (r_in >> 2) + (g_in >> 1) + (b_in >> 2);
-    wire [3:0] thresh = (gray > 4'd7) ? 4'hF : 4'h0;
+    wire [11:0] filtered_pixel;
+    image_filter image_filter_inst (
+        .filter_sw(filter_sw),
+        .pixel_in  (frame_pixel),
+        .pixel_out (filtered_pixel)
+    );
 
     // ----------------------------------------------------
     // PIPELINE STAGE 3: data is ready; drive the display outputs.
@@ -86,33 +86,9 @@ module vga_display (
         vga_vsync <= p2_vsync;
         
         if (p2_active) begin
-            case (filter_sw)
-                2'b00: begin // RAW FEED
-                    vga_red   <= r_in;
-                    vga_green <= g_in;
-                    vga_blue  <= b_in;
-                end
-                2'b01: begin // FILTER 1: Grayscale
-                    vga_red   <= gray;
-                    vga_green <= gray;
-                    vga_blue  <= gray;
-                end
-                2'b10: begin // FILTER 2: Binary Threshold
-                    vga_red   <= thresh;
-                    vga_green <= thresh;
-                    vga_blue  <= thresh;
-                end
-                2'b11: begin // FILTER 3: Red Isolation
-                    vga_red   <= r_in;
-                    vga_green <= 4'b0;
-                    vga_blue  <= 4'b0;
-                end
-                default: begin
-                    vga_red   <= 4'h0;
-                    vga_green <= 4'h0;
-                    vga_blue  <= 4'h0;
-                end
-            endcase
+            vga_red   <= filtered_pixel[11:8];
+            vga_green <= filtered_pixel[7:4];
+            vga_blue  <= filtered_pixel[3:0];
         end else begin
             vga_red   <= 4'h0;
             vga_green <= 4'h0;
