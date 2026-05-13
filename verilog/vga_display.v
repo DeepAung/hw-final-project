@@ -104,6 +104,11 @@ module vga_display (
                     vga_green <= 4'b0;
                     vga_blue  <= 4'b0;
                 end
+                default: begin
+                    vga_red   <= 4'h0;
+                    vga_green <= 4'h0;
+                    vga_blue  <= 4'h0;
+                end
             endcase
         end else begin
             vga_red   <= 4'h0;

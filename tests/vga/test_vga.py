@@ -40,21 +40,20 @@ async def test_image_filters(dut):
         if dut.frame_addr.value.integer > 0:
             break
             
-    # Inject a known pixel (e.g., Pure Blue: Red=0, Green=0, Blue=F)
-    # Format is 12-bit RGB: 12'h00F
-    dut.frame_pixel.value = 0x00F
-    
-    # Test 1: RAW FEED (sw = 00)
+    # Set RAW FEED filter and inject a known pixel (Pure Blue: Red=0, Green=0, Blue=F)
     dut.filter_sw.value = 0b00
+    dut.frame_pixel.value = 0x00F
     await RisingEdge(dut.clk25)
-    await RisingEdge(dut.clk25) # Wait for output register
+    await RisingEdge(dut.clk25)
+    await RisingEdge(dut.clk25) # Wait for input registration and output propagation
     assert dut.vga_blue.value == 0xF, "Raw feed failed on Blue channel"
     assert dut.vga_red.value == 0x0, "Raw feed failed on Red channel"
     
     # Test 2: RED ISOLATION (sw = 11)
     # Inject a Magenta pixel (Red=F, Green=0, Blue=F) -> 0xF0F
-    dut.frame_pixel.value = 0xF0F
     dut.filter_sw.value = 0b11
+    dut.frame_pixel.value = 0xF0F
+    await RisingEdge(dut.clk25)
     await RisingEdge(dut.clk25)
     await RisingEdge(dut.clk25)
     assert dut.vga_red.value == 0xF, "Red isolation failed: Red channel blocked"
