@@ -318,9 +318,9 @@ module I2C_OV7670_RGB565_Config (
             SET_OV7670 + 3:  LUT_DATA = 16'h3dc8;
             SET_OV7670 + 4:  LUT_DATA = 16'h1e31;
             SET_OV7670 + 5:  LUT_DATA = 16'h6b00;
-            SET_OV7670 + 6:  LUT_DATA = 16'h32b6;
-            SET_OV7670 + 7:  LUT_DATA = 16'h1713;
-            SET_OV7670 + 8:  LUT_DATA = 16'h1801;
+            SET_OV7670 + 6:  LUT_DATA = 16'h32a4;
+            SET_OV7670 + 7:  LUT_DATA = 16'h1716;
+            SET_OV7670 + 8:  LUT_DATA = 16'h1804;
             SET_OV7670 + 9:  LUT_DATA = 16'h1902;
             SET_OV7670 + 10: LUT_DATA = 16'h1a7a;
             SET_OV7670 + 11: LUT_DATA = 16'h030a;
