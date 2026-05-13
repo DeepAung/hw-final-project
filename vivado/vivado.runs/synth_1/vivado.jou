@@ -1,24 +1,24 @@
 #-----------------------------------------------------------
 # Vivado v2025.2 (64-bit)
-# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue May 12 12:18:22 2026
-# Process ID         : 117242
-# Current directory  : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1
-# Command line       : vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file           : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/top.vds
-# Journal file       : /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/vivado.jou
-# Running On         : archlinux
-# Platform           : Arch
-# Operating System   : Arch Linux
-# Processor Detail   : 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz
-# CPU Frequency      : 2909.824 MHz
-# CPU Physical cores : 4
-# CPU Logical cores  : 8
-# Host memory        : 16440 MB
-# Swap memory        : 16775 MB
-# Total Virtual      : 33216 MB
-# Available Virtual  : 26461 MB
+# Start of session at: Wed May 13 17:29:21 2026
+# Process ID         : 17284
+# Current directory  : C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1
+# Command line       : vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file           : C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1/top.vds
+# Journal file       : C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-45K9A8Q
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 5 5600H with Radeon Graphics         
+# CPU Frequency      : 3294 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16537 MB
+# Swap memory        : 5287 MB
+# Total Virtual      : 21825 MB
+# Available Virtual  : 2978 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

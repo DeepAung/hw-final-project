@@ -3,107 +3,103 @@
     with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 
 
+
 ****** Vivado v2025.2 (64-bit)
-  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Tue May 12 12:18:22 2026
+  **** Start of session at: Wed May 13 17:29:21 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/utils_1/imports/synth_1/vga_test.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/utils_1/imports/synth_1/vga_test.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 525.641 ; gain = 220.680
+Command: read_checkpoint -auto_incremental -incremental C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.srcs/utils_1/imports/synth_1/vga_test.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.srcs/utils_1/imports/synth_1/vga_test.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 117336
+INFO: [Synth 8-7075] Helper process launched with PID 20728
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2234.879 ; gain = 483.594 ; free physical = 1449 ; free virtual = 23930
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1274.949 ; gain = 540.742
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v:3]
-INFO: [Synth 8-6157] synthesizing module 'clock_gen' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/clock_gen.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'clock_gen' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/clock_gen.v:1]
-WARNING: [Synth 8-7071] port 'reset' of module 'clock_gen' is unconnected for instance 'clock_gen_inst' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v:26]
-WARNING: [Synth 8-7023] instance 'clock_gen_inst' of module 'clock_gen' has 4 connections declared, but only 3 given [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v:26]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/debounce.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/debounce.v:1]
-INFO: [Synth 8-6157] synthesizing module 'camera_capture' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_capture.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'camera_capture' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_capture.v:1]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/.Xil/Vivado-117242-archlinux/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/.Xil/Vivado-117242-archlinux/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'I2C_AV_Config' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_config.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_config.v:73]
-INFO: [Synth 8-6157] synthesizing module 'I2C_OV7670_RGB565_Config' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v:303]
-INFO: [Synth 8-6155] done synthesizing module 'I2C_OV7670_RGB565_Config' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v:303]
-INFO: [Synth 8-6157] synthesizing module 'I2C_Controller' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'I2C_Controller' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/sccb_sender.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'I2C_AV_Config' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/camera_config.v:1]
-INFO: [Synth 8-6157] synthesizing module 'vga_display' [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_display.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'vga_display' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/vga_display.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clock_gen' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/clock_gen.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1/.Xil/Vivado-17284-DESKTOP-45K9A8Q/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1/.Xil/Vivado-17284-DESKTOP-45K9A8Q/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clock_gen' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/clock_gen.v:1]
+INFO: [Synth 8-6157] synthesizing module 'camera_capture' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/camera_capture.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'camera_capture' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/camera_capture.v:3]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1/.Xil/Vivado-17284-DESKTOP-45K9A8Q/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1/.Xil/Vivado-17284-DESKTOP-45K9A8Q/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'I2C_AV_Config' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/camera_config.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/camera_config.v:73]
+INFO: [Synth 8-6157] synthesizing module 'I2C_OV7670_RGB565_Config' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/sccb_sender.v:303]
+INFO: [Synth 8-6155] done synthesizing module 'I2C_OV7670_RGB565_Config' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/sccb_sender.v:303]
+INFO: [Synth 8-6157] synthesizing module 'I2C_Controller' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/sccb_sender.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'I2C_Controller' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/sccb_sender.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'I2C_AV_Config' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/camera_config.v:1]
+INFO: [Synth 8-6157] synthesizing module 'vga_display' [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/vga_display.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'vga_display' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/vga_display.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/top.v:3]
 WARNING: [Synth 8-3917] design top has port OV7670_PWDN driven by constant 0
 WARNING: [Synth 8-3917] design top has port OV7670_RST driven by constant 1
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2328.848 ; gain = 577.562 ; free physical = 1329 ; free virtual = 23812
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1406.793 ; gain = 672.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2340.723 ; gain = 589.438 ; free physical = 1321 ; free virtual = 23804
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1406.793 ; gain = 672.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2340.723 ; gain = 589.438 ; free physical = 1321 ; free virtual = 23804
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1406.793 ; gain = 672.586
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2340.723 ; gain = 0.000 ; free physical = 1321 ; free virtual = 23804
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1406.793 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_frame_buffer'
-Finished Parsing XDC File [/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_frame_buffer'
-Parsing XDC File [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc]
-Finished Parsing XDC File [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/deepaung/Courses/hw-syn-lab-i/final-project/verilog/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [c:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_frame_buffer'
+Finished Parsing XDC File [c:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'u_frame_buffer'
+Parsing XDC File [c:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clock_gen_inst/clk_wiz'
+Finished Parsing XDC File [c:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clock_gen_inst/clk_wiz'
+Parsing XDC File [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/verilog/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2522.500 ; gain = 0.000 ; free physical = 1298 ; free virtual = 23781
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1466.598 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2522.535 ; gain = 0.000 ; free physical = 1298 ; free virtual = 23781
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1466.598 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2522.535 ; gain = 771.250 ; free physical = 1265 ; free virtual = 23828
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1466.598 ; gain = 732.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2538.504 ; gain = 787.219 ; free physical = 1265 ; free virtual = 23828
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1466.598 ; gain = 732.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2538.504 ; gain = 787.219 ; free physical = 1265 ; free virtual = 23828
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint /home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.srcs/utils_1/imports/synth_1/vga_test.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2538.504 ; gain = 787.219 ; free physical = 1264 ; free virtual = 23830
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2538.504 ; gain = 787.219 ; free physical = 1264 ; free virtual = 23830
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1466.598 ; gain = 732.391
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'mSetup_ST_reg' in module 'I2C_AV_Config'
 ---------------------------------------------------------------------------------------------------
@@ -115,46 +111,36 @@ INFO: [Synth 8-802] inferred FSM for state register 'mSetup_ST_reg' in module 'I
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'mSetup_ST_reg' using encoding 'one-hot' in module 'I2C_AV_Config'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2538.504 ; gain = 787.219 ; free physical = 1290 ; free virtual = 23841
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1466.598 ; gain = 732.391
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   3 Input   17 Bit       Adders := 1     
 	   2 Input   11 Bit       Adders := 1     
-	   2 Input   10 Bit       Adders := 4     
-	   2 Input    8 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 5     
+	   2 Input    8 Bit       Adders := 2     
 	   2 Input    6 Bit       Adders := 1     
 	   3 Input    4 Bit       Adders := 1     
-	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
+	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
-	               10 Bit    Registers := 2     
+	               10 Bit    Registers := 3     
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 20    
+	                1 Bit    Registers := 26    
 +---Muxes : 
-	   2 Input   17 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
 	   2 Input    6 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 3     
 	   7 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 34    
+	   2 Input    1 Bit        Muxes := 37    
 	  41 Input    1 Bit        Muxes := 4     
 	  59 Input    1 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 3     
@@ -176,7 +162,7 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-3917] design top has port OV7670_PWDN driven by constant 0
 WARNING: [Synth 8-3917] design top has port OV7670_RST driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2538.504 ; gain = 787.219 ; free physical = 1336 ; free virtual = 23834
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1474.359 ; gain = 740.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -199,19 +185,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2594.504 ; gain = 843.219 ; free physical = 1297 ; free virtual = 23789
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1605.312 ; gain = 871.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2626.551 ; gain = 875.266 ; free physical = 1254 ; free virtual = 23747
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1639.664 ; gain = 905.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2626.551 ; gain = 875.266 ; free physical = 1254 ; free virtual = 23747
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1639.664 ; gain = 905.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -229,37 +215,52 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                  | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | vga_display/vga_hsync_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|top         | vga_display/vga_vsync_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -270,6 +271,7 @@ Report BlackBoxes:
 |      |BlackBox name |Instances |
 +------+--------------+----------+
 |1     |blk_mem_gen_0 |         1|
+|2     |clk_wiz_0     |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
@@ -277,49 +279,48 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |blk_mem_gen |     1|
-|2     |BUFG        |     3|
-|3     |CARRY4      |    17|
-|4     |LUT1        |     8|
-|5     |LUT2        |    29|
-|6     |LUT3        |    25|
-|7     |LUT4        |    20|
-|8     |LUT5        |    39|
-|9     |LUT6        |   157|
-|10    |MUXF7       |    19|
-|11    |MUXF8       |     4|
-|12    |FDCE        |    33|
-|13    |FDPE        |     9|
-|14    |FDRE        |   117|
-|15    |IBUF        |    15|
-|16    |IOBUF       |     1|
-|17    |OBUF        |    18|
+|2     |clk_wiz     |     1|
+|3     |BUFG        |     1|
+|4     |CARRY4      |     9|
+|5     |LUT1        |     5|
+|6     |LUT2        |    35|
+|7     |LUT3        |    29|
+|8     |LUT4        |    27|
+|9     |LUT5        |    44|
+|10    |LUT6        |   144|
+|11    |MUXF7       |    19|
+|12    |MUXF8       |     4|
+|13    |SRL16E      |     2|
+|14    |FDCE        |    33|
+|15    |FDPE        |     9|
+|16    |FDRE        |   128|
+|17    |IBUF        |    14|
+|18    |IOBUF       |     1|
+|19    |OBUF        |    18|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.363 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2792.363 ; gain = 859.266 ; free physical = 1092 ; free virtual = 23586
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2792.371 ; gain = 1041.078 ; free physical = 1092 ; free virtual = 23586
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1865.102 ; gain = 1071.090
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1865.102 ; gain = 1130.895
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2792.371 ; gain = 0.000 ; free physical = 1092 ; free virtual = 23586
-INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1874.305 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2904.391 ; gain = 0.000 ; free physical = 1045 ; free virtual = 23539
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1878.023 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
 
-Synth Design complete | Checksum: cafcec4a
+Synth Design complete | Checksum: fdcbaa8f
 INFO: [Common 17-83] Releasing license: Synthesis
-39 Infos, 6 Warnings, 1 Critical Warnings and 0 Errors encountered.
+42 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2904.426 ; gain = 1215.344 ; free physical = 1045 ; free virtual = 23539
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2074.192; main = 1852.173; forked = 280.781
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3796.789; main = 2904.395; forked = 1004.422
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2952.402 ; gain = 0.000 ; free physical = 1045 ; free virtual = 23539
-INFO: [Common 17-1381] The checkpoint '/home/deepaung/Courses/hw-syn-lab-i/final-project/vivado/vivado.runs/synth_1/top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1878.023 ; gain = 1336.949
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1878.023 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ASUS/Desktop/verilog_lab/hw-final-project/vivado/vivado.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 12 12:18:50 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed May 13 17:30:15 2026...
