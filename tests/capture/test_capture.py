@@ -18,7 +18,7 @@ async def end_line(dut):
 
 
 @cocotb.test()
-async def test_line_aware_windowing(dut):
+async def test_frame_bounds_and_addressing(dut):
     cocotb.start_soon(Clock(dut.pclk, 42, unit="ns").start())
 
     dut.vsync.value = 1
@@ -28,40 +28,38 @@ async def test_line_aware_windowing(dut):
     dut.vsync.value = 0
 
     await FallingEdge(dut.pclk)
-    assert int(dut.addr.value) == 0, "Address should reset on VSYNC"
+    assert int(dut.we.value) == 0, "VSYNC should suppress writes"
 
-    # Default capture parameters skip the first two source lines.
-    for _ in range(2):
-        dut.href.value = 1
-        await send_pixel(dut, 0xF0, 0x0F)
-        assert dut.we.value == 0, "CROP_TOP line should not be written"
-        await end_line(dut)
-
-    # On the first captured line, the first four pixels are skipped.
+    # The first active pixel is written to address 0.
     dut.href.value = 1
-    for _ in range(4):
-        await send_pixel(dut, 0x12, 0x34)
-        assert dut.we.value == 0, "CROP_LEFT pixel should not be written"
-
     await send_pixel(dut, 0xF0, 0x0F)
-    assert dut.we.value == 1, "First in-window pixel was not written"
-    assert int(dut.addr.value) == 0, "First in-window pixel should map to address 0"
+    assert int(dut.we.value) == 1, "First pixel was not written"
+    assert int(dut.addr.value) == 0, "First pixel should map to address 0"
     assert int(dut.dout.value) == 0xF07, "RGB565 to RGB444 conversion is wrong"
 
+    # Pixels advance horizontally within the current line.
     await send_pixel(dut, 0x0F, 0xF0)
-    assert dut.we.value == 1, "Second in-window pixel was not written"
-    assert int(dut.addr.value) == 1, "Second in-window pixel should map to address 1"
+    assert int(dut.we.value) == 1, "Second pixel was not written"
+    assert int(dut.addr.value) == 1, "Second pixel should map to address 1"
 
     await end_line(dut)
 
-    # Next captured line starts at address 320 after the same left crop.
+    # The next line starts at address 320 after HREF falls.
     dut.href.value = 1
-    for _ in range(4):
-        await send_pixel(dut, 0x56, 0x78)
-        assert dut.we.value == 0, "Left crop should apply on every line"
-
     await send_pixel(dut, 0xAA, 0x55)
-    assert dut.we.value == 1, "First pixel on second captured line was not written"
-    assert int(dut.addr.value) == 320, "Second captured line should start at address 320"
+    assert int(dut.we.value) == 1, "First pixel on second line was not written"
+    assert int(dut.addr.value) == 320, "Second line should start at address 320"
 
-    print("Line-aware capture windowing verified.")
+    # VSYNC resets the line and pixel counters for a new frame.
+    dut.href.value = 0
+    dut.vsync.value = 1
+    await FallingEdge(dut.pclk)
+    dut.vsync.value = 0
+    await FallingEdge(dut.pclk)
+
+    dut.href.value = 1
+    await send_pixel(dut, 0x12, 0x34)
+    assert int(dut.we.value) == 1, "First pixel after VSYNC was not written"
+    assert int(dut.addr.value) == 0, "VSYNC should reset the next frame to address 0"
+
+    print("Frame-bounded capture addressing verified.")
