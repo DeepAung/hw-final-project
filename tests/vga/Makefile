@@ -12,4 +12,5 @@ VERILOG_SOURCES += $(PROJ_ROOT)/verilog/vga_display.v
 TOPLEVEL = vga_display
 MODULE = test_vga
 
+include $(PROJ_ROOT)/tests/cocotb_wave.mk
 include $(shell cocotb-config --makefiles)/Makefile.sim

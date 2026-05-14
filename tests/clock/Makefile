@@ -4,4 +4,5 @@ PROJ_ROOT := $(shell pwd)/../..
 VERILOG_SOURCES += $(PROJ_ROOT)/verilog/clock_gen.v
 TOPLEVEL = clock_gen
 MODULE = test_clock
+include $(PROJ_ROOT)/tests/cocotb_wave.mk
 include $(shell cocotb-config --makefiles)/Makefile.sim

@@ -33,6 +33,9 @@
 *.saif
 *.tcf
 *.wdb
+*.fst
+tests/**/sim_build/
+tests/**/results.xml
 
 ## others
 unisims
